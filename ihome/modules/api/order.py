@@ -5,7 +5,7 @@ from ihome.models import House, Order
 from ihome.utils.common import login_required
 from ihome.utils.response_code import RET
 from . import api_blu
-from flask import request, g, jsonify, current_app
+from flask import request, g, jsonify, current_app, session
 
 
 # 预订房间
@@ -23,7 +23,55 @@ def add_order():
     7. 返回下单结果
     :return:
     """
-    pass
+    param_dict = request.json
+    start_data = param_dict.get('start_data')
+    end_date = param_dict.get('end_date')
+    house_id = param_dict.get('house_id')
+    user_id = g.user_id
+
+    # 校验参数
+    if not all([start_data, end_date, house_id]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数不足')
+
+    # 查询房屋是否存在
+    try:
+        house = House.query.filter(House.id == house_id).first()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询房屋数据异常")
+    if not house:
+        return jsonify(errno=RET.NODATA, errmsg='房屋不存在')
+
+    # 判断当前房屋的房主是否是登录用户
+    if user_id == house.user_id:
+        return jsonify(errno=RET.DATAERR, errmsg='用户为屋主,不能预定')
+
+    # 查询当前预订时间是否存在冲突
+    try:
+        order = Order.query.filter(Order.house_id == house_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询订单数据异常")
+    if order:
+        if not int(start_data) > int(order.end_date) or int(end_date) < int(order.begin_date):
+            return jsonify(errno=RET.DATAERR, errmsg='该时间段已有订单')
+
+    # 生成订单模型，进行下单
+    order = Order()
+    order.user_id = user_id
+    order.house_id = house_id
+    order.begin_date = start_data
+    order.end_date = end_date
+    order.user_id = user_id
+    order.house_id = house_id
+    try:
+        db.session.add(order)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="保存订单数据异常")
+    return {"errno": "0",
+            "errmsg": "OK"}
 
 
 # 获取我的订单
