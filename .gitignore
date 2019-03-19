@@ -104,3 +104,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+*.py[cod]
+logs/log*
+migrations
