@@ -1,6 +1,5 @@
 import datetime
-
-from flask import current_app, jsonify, request, g, session
+from flask import current_app, jsonify, request, g, session, render_template
 from ihome import sr, db
 from ihome.models import Area, House, Facility, HouseImage, Order
 from ihome.modules.api import api_blu
@@ -33,7 +32,18 @@ def get_areas():
     2. 返回
     :return:
     """
-    pass
+    try:
+        area_li = Area.query.all()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="获取城区对象异常")
+
+    areas_dicts = []
+    for area in area_li:
+        areas_dicts.append(area.to_dict())
+
+    return jsonify(errno=RET.OK, errmsg="OK", data=areas_dicts)
+
 
 # 上传房屋图片
 @api_blu.route("/houses/<int:house_id>/images", methods=['POST'])
@@ -46,7 +56,42 @@ def upload_house_image(house_id):
     4. 进行返回
     :return:
     """
-    pass
+    house_id = request.form.get("house_id")
+    images = request.files.get("images")
+
+    if not all([house_id, images]):
+        return jsonify(errno=RET.PARAMERR, errmsg="参数不足")
+
+    try:
+        house = House.query.get(house_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询房间数据异常")
+
+    if house is None:
+        return jsonify(errno=RET.NODATA, errmsg="房间不存在")
+
+    images_data = images.read()
+
+    try:
+        file_name = storage_image(images_data)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.THIRDERR, errmsg="上传失败")
+
+    house_image = HouseImage()
+    house_image.house_id = house_id
+    house_image.url = file_name
+
+    try:
+        db.session.add(house_image)
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg="保存图片异常")
+
+    image_url = constants.QINIU_DOMIN_PREFIX + file_name
+    return jsonify(errno=RET.OK, errmsg="OK", data={"image_url": image_url})
 
 
 # 发布房源
@@ -75,7 +120,73 @@ def save_new_house():
     }
     :return:
     """
-    pass
+    user_id = g.user.id
+    house_data = request.get_json()
+
+    title = house_data.get("title")
+    price = house_data.get("price")
+    area_id = house_data.get("area_id")
+    address = house_data.get("address")
+    room_count = house_data.get("room_count")
+    acreage = house_data.get("acreage")
+    unit = house_data.get("unit")
+    capacity = house_data.get("capacity")
+    beds = house_data.get("beds")
+    deposit = house_data.get("deposit")
+    min_days = house_data.get("min_days")
+    max_days = house_data.get("max_days")
+
+    if not all([title, price, area_id, address, room_count, acreage, unit, capacity, beds, deposit, min_days, max_days]):
+        return jsonify(errno=RET.PARAMERR, errmsg="参数不足")
+
+    # 查询城区id是否存在
+    try:
+        area = Area.query.get(area_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="城区查询异常")
+    if area is None:
+        return jsonify(errno=RET.NODATA, errmsg="参数有误")
+
+    house = House()
+
+    house.user_id = user_id
+    house.title = title
+    house.price = price
+    house.area_id = area_id
+    house.address = address
+    house.room_count = room_count
+    house.acreage = acreage
+    house.unit = unit
+    house.capacity = capacity
+    house.beds = beds
+    house.deposit = deposit
+    house.min_days = min_days
+    house.max_days = max_days
+
+    facility_id = house_data.get("facility")
+
+    facilities = None
+
+    if facility_id:
+        try:
+            # 如果facility_id在Facility中, 才查询出来
+            facilities = Facility.query.filter(Facility.id.in_(facility_id)).all()
+        except Exception as e:
+            current_app.logger.error(e)
+            return jsonify(errno=RET.DBERR, errmsg="参数有误")
+
+    if facilities:
+        house.facilities = facilities
+        try:
+            db.session.add()
+            db.session.commit()
+        except Exception as e:
+            current_app.logger.error(e)
+            db.session.rollback()
+            return jsonify(errno=RET.DBERR, errmsg="保存数据异常")
+
+    return jsonify(errno=RET.OK, errmsg="OK", data={"house_id": house.id})
 
 
 # 房屋详情
