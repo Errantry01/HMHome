@@ -1,5 +1,8 @@
 # 实现图片验证码和短信验证码的逻辑
+from datetime import datetime
 import re, random
+
+from alembic.autogenerate import render
 from flask import request, abort, current_app, jsonify, make_response, json, session
 
 from ihome import sr, db
@@ -67,7 +70,41 @@ def login():
     5. 返回结果
     :return:
     """
-    pass
+    #1:获取参数
+    param_dict = request.json
+    mobile = param_dict.get("mobile")
+    password = param_dict.get("password")
+    #2:判断参数检验
+    if not all([mobile,password]):
+        return jsonify(errno=RET.PARAMERR,errmsg="参数错误")
+    #3:判断手机号码格式
+    if not re.match(r"1[35789][0-9]{9}",mobile):
+        return jsonify(errno=RET.PARAMERR,errmsg="参数错误")
+    #4:查询用户是否存在
+    try:
+        user = User.query.filter_by(mobile=mobile).first()
+    except Exception as e:
+        return jsonify(errni=RET.USERERR,errmsg="用户不存在")
+    if not user:
+        return jsonify(errno=RET.USERERR,errmsg="用户未注册，请注册")
+    #5:判断密码是否正确
+    if user.check_passowrd(password) is False:
+        return jsonify(errno=RET.PWDERR,errmsg="密码错误")
+    #6更新最后一次登录时间
+    user.last_login = datetime.now()
+    #7:将修改操作提交到数据库
+    try:
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR,errmsg="提交数据错误")
+    #8:使用session记录用户信息
+    db.session["user_id"] = user.id
+    db.session["mobile"] = user.mobile
+    db.session["name"] = user.name
+    #9:返回数据
+    return jsonify(errno=RET.OK,errmsg="ok")
+
 
 
 # 获取登录状态
@@ -77,8 +114,21 @@ def check_login():
     检测用户是否登录，如果登录，则返回用户的名和用户id
     :return:
     """
-    pass
+    user_id = session.get("user_id")
+    user = None
+    user_dict = []
+    if user_id:
+        try:
+            user = User.query.get(user_id)
+        except Exception as e:
+            return jsonify(errno=RET.USERERR,errmsg="查询用户失败")
 
+
+        user_dict = user.to_dict() if user else None
+    data = {
+        "user_id":user_dict
+    }
+    return make_response(data)
 
 # 退出登录
 @api_blu.route("/session", methods=["DELETE"])
@@ -87,4 +137,8 @@ def logout():
     1. 清除session中的对应登录之后保存的信息
     :return:
     """
-    pass
+    session.pop("user_id","")
+    session.pop("mobile","")
+    session.pop("name","")
+
+    return jsonify(errno=RET.OK,errmsg="退出登录成功")
