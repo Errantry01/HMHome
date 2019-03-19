@@ -4,6 +4,7 @@ from flask import request, abort, current_app, jsonify, make_response, json, ses
 
 from ihome import sr, db
 from ihome.libs.captcha.pic_captcha import captcha
+from ihome.libs.yuntongxun.sms import CCP
 from ihome.models import User
 from ihome.modules.api import api_blu
 from ihome.utils import constants
@@ -20,13 +21,8 @@ def get_image_code():
         return jsonify(errno=RET.PARAMERR, errmsg="image code err")
     # 2. 生成图片验证码
     image_name, sea_image_name, image_data = captcha.generate_captcha()
-    """
-        mobile": mobile,
-        image_code": imageCode,
-        image_code_id": imageCodeId
-    """
     # 3. 保存编号和其对应的图片验证码内容到redis#使用code_id作为key将验证码真实值存储到redis中，并且设置有效时长
-    sr.setex(code_id, constants.IMAGE_CODE_REDIS_EXPIRES, sea_image_name)
+    sr.setex("Iamge_Code_%s" % code_id, constants.IMAGE_CODE_REDIS_EXPIRES, sea_image_name)
     # 4. 返回验证码图片
 
     response = make_response(image_data)
@@ -35,20 +31,67 @@ def get_image_code():
     return response
 
 
+
 # 获取短信验证码
 @api_blu.route('/smscode', methods=["POST"])
 def send_sms():
-    """
-    1. 接收参数并判断是否有值
-    2. 校验手机号是正确
-    3. 通过传入的图片编码去redis中查询真实的图片验证码内容
-    4. 进行验证码内容的比对
-    5. 生成发送短信的内容并发送短信
-    6. redis中保存短信验证码内容
-    7. 返回发送成功的响应
-    :return:
-    """
-    pass
+    # 1. 接收参数并判断是否有值
+    receiver = request.json
+    mobile = receiver.get('mobile')
+    image_code = receiver.get('image_code')
+    image_code_id = receiver.get('image_code_id')
+
+    if not all([mobile,image_code,image_code_id]):
+        current_app.logger.error("参数不足")
+        # 错误信息
+        err_dict = {"errno": RET.PARAMERR, "errmsg": "参数不足"}
+        return jsonify(err_dict)
+    # 2. 校验手机号是正确
+    if not re.match(r"1[2345678][0-9]{9}",mobile):
+        return jsonify(errno=RET.PARAMERR, errmsg="手机号码格式错误")
+    # 3. 通过传入的图片编码去redis中查询真实的图片验证码内容
+    try:
+        real_image_code = sr.get("Iamge_Code_%s" % image_code_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR,errmsg="查询失败")
+    #
+    if not real_image_code:
+        return jsonify(errno=RET.PARAMERR, errmsg="图片失效")
+    # 4. 进行验证码内容的比对
+    if image_code.lower() != real_image_code.lower():
+        return jsonify(errno=RET.PARAMERR, errmsg="图片错误")
+
+
+    # 5. 生成发送短信的内容并发送短信
+        # TODO: 判断手机号码是否已经注册 【提高用户体验】
+    try:
+        user = User.query.filter(User.mobile == mobile).first()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询用户数据异常")
+
+
+    if user:
+        # 当前手机号码已经注册
+        return jsonify(errno=RET.DATAEXIST, errmsg="手机号码已经注册")
+        # 3.4.1 生成6位的随机短信
+    real_sms_code = random.randint(0, 999999)
+    # 6位，前面补零
+    real_sms_code = "%06d" % real_sms_code
+    # 4.发送短信验证码成功
+    try:
+        result = CCP().send_template_sms(mobile, {real_sms_code, 5}, 1)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.THIRDERR, errmsg="云通信发送短信验证码异常")
+    # 发送短信验证码失败：告知前端
+    if result == -1:
+        return jsonify(errno=RET.THIRDERR, errmsg="云通信发送短信验证码异常")
+    # 6. redis中保存短信验证码内容
+    sr.setex("SMS_CODE_%s" % mobile, constants.SMS_CODE_REDIS_EXPIRES, real_sms_code)
+    # 7. 返回发送成功的响应
+    return jsonify(errno=RET.OK, errmsg="发送短信验证码成功")
 
 
 # 用户注册

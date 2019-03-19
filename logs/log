@@ -6739,3 +6739,167 @@ INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_in
 INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 16:49:34] "GET /register.html HTTP/1.1" 304 -
 INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 16:49:39] "GET /api/v1.0/imagecode?cur=7435ecad-a8e8-4b29-b744-587aa9ff6be3&pre= HTTP/1.1" 200 -
 INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 16:49:40] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 17:08:02] "POST /api/v1.0/smscode HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:16:01] "GET /register.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:16:10] "GET /api/v1.0/imagecode?cur=bf9203b8-6c79-46eb-8f9d-fd36101d7c28&pre= HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:16:11] "GET /favicon.ico HTTP/1.1" 200 -
+ERROR /home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py:45 参数不足
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:16:29] "POST /api/v1.0/smscode HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:17:01] "GET /api/v1.0/imagecode?cur=da357761-afd1-4aa7-bea3-0a9c406fd83f&pre=bf9203b8-6c79-46eb-8f9d-fd36101d7c28 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:18:42] "GET /register.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:18:42] "GET /api/v1.0/imagecode?cur=86cea6a7-256f-421d-8dc5-7d4dc3157598&pre= HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:18:43] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:19:46] "GET /register.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:19:46] "GET /api/v1.0/imagecode?cur=edc0eb0f-7517-4c2c-b593-92fcb472ec4e&pre= HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:19:47] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:20:48] "GET /register.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:20:49] "GET /api/v1.0/imagecode?cur=be0672af-2efc-4292-8741-035d3b6e7e94&pre= HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:20:49] "GET /favicon.ico HTTP/1.1" 200 -
+ERROR /home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py:45 参数不足
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:21:03] "POST /api/v1.0/smscode HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:21:08] "GET /api/v1.0/imagecode?cur=c22b39bb-417b-4d9b-9eaf-401cf947847f&pre=be0672af-2efc-4292-8741-035d3b6e7e94 HTTP/1.1" 200 -
+ERROR /home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py:45 参数不足
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:21:17] "POST /api/v1.0/smscode HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:21:19] "GET /api/v1.0/imagecode?cur=663e9ec9-b6e5-4e53-8810-3cd9a629eadd&pre=c22b39bb-417b-4d9b-9eaf-401cf947847f HTTP/1.1" 200 -
+ERROR /home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py:45 参数不足
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:21:24] "POST /api/v1.0/smscode HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:21:27] "GET /api/v1.0/imagecode?cur=22b849f2-0eee-4739-96e0-ed4504f99304&pre=663e9ec9-b6e5-4e53-8810-3cd9a629eadd HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:21:33] "GET /register.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:21:34] "GET /api/v1.0/imagecode?cur=686145fb-43bf-4648-b831-7f053cc5a841&pre= HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:21:34] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:22:12] "GET /register.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:22:12] "GET /api/v1.0/imagecode?cur=f1d3fd69-311c-42c4-afaa-9fabf1e6843a&pre= HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:22:12] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:22:28] "POST /api/v1.0/smscode HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:24:26] "GET /api/v1.0/imagecode?cur=f41d0575-bf36-47d9-b0cc-8f7ca60ae9e1&pre=f1d3fd69-311c-42c4-afaa-9fabf1e6843a HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:24:30] "GET /register.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:24:31] "GET /api/v1.0/imagecode?cur=f7a3c3df-9d33-4fe3-82a8-9669394974d2&pre= HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:24:32] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:24:43] "POST /api/v1.0/smscode HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:26:57] "GET /api/v1.0/imagecode?cur=0c841f8a-5842-4e0d-b898-18a0c9382ac6&pre=f7a3c3df-9d33-4fe3-82a8-9669394974d2 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:26:57] "GET /register.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:26:58] "GET /api/v1.0/imagecode?cur=0c841f8a-5842-4e0d-b898-18a0c9382ac6&pre=f7a3c3df-9d33-4fe3-82a8-9669394974d2 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:26:58] "GET /api/v1.0/imagecode?cur=7d3795cc-9a98-47c4-b248-5e88c858d65a&pre= HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:26:58] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:27:26] "GET /register.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:27:26] "GET /api/v1.0/imagecode?cur=9db61c08-72a5-40df-8a99-d7bd82ff3547&pre= HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:27:26] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:27:33] "GET /register.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:27:33] "GET /api/v1.0/imagecode?cur=387e01e5-754e-441c-a9bc-f24d624aa7a4&pre= HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:27:34] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:28:05] "POST /api/v1.0/smscode HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:33] "GET /api/v1.0/imagecode?cur=9d6336cb-7730-4496-b0f8-7bab1d447866&pre=387e01e5-754e-441c-a9bc-f24d624aa7a4 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:39] "GET /register.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:39] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:39] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:39] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:40] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:40] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:40] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:40] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:40] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:40] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:40] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:41] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:42] "GET /api/v1.0/imagecode?cur=fb343d90-ce07-45c6-a97d-189c6a8be455&pre= HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:43] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:45:57] "POST /api/v1.0/smscode HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:46:00] "GET /api/v1.0/imagecode?cur=a9ab46fc-1b90-4686-8604-b33aad58debf&pre=fb343d90-ce07-45c6-a97d-189c6a8be455 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:46:18] "GET /api/v1.0/imagecode?cur=425ab755-5918-4c23-bd56-ccb1d32310f0&pre=a9ab46fc-1b90-4686-8604-b33aad58debf HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:46:19] "GET /api/v1.0/imagecode?cur=e08e695d-fc74-4817-85a9-446e606856d4&pre=425ab755-5918-4c23-bd56-ccb1d32310f0 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:46:22] "GET /api/v1.0/imagecode?cur=2e4a5265-bd54-4429-bb65-0d4eefb54bfd&pre=e08e695d-fc74-4817-85a9-446e606856d4 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:46:32] "GET /api/v1.0/imagecode?cur=171c0cfa-a94b-4812-b2c8-11b0ccdd1929&pre=2e4a5265-bd54-4429-bb65-0d4eefb54bfd HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:46:34] "GET /api/v1.0/imagecode?cur=52940457-e44c-428a-8dd3-4c5e3e7b19ba&pre=171c0cfa-a94b-4812-b2c8-11b0ccdd1929 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:46:48] "POST /api/v1.0/smscode HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:30] "GET /api/v1.0/imagecode?cur=59760222-7199-4120-86b4-6a329ef242cb&pre=52940457-e44c-428a-8dd3-4c5e3e7b19ba HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:32] "GET /register.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:33] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:33] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:33] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:33] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:33] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:33] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:33] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:34] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:34] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:34] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:34] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:35] "GET /api/v1.0/imagecode?cur=a2df82ab-465d-47db-abe5-4f0dace39968&pre= HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:36] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:48:40] "GET /api/v1.0/imagecode?cur=14e63220-9441-40b0-b651-dc85fce3c278&pre=a2df82ab-465d-47db-abe5-4f0dace39968 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:49:20] "POST /api/v1.0/smscode HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/libs/yuntongxun/sms.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:50:35] "GET /api/v1.0/imagecode?cur=80163086-2ff2-4d69-9c87-4be9a4db2fcf&pre=14e63220-9441-40b0-b651-dc85fce3c278 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:51:16] "POST /api/v1.0/smscode HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:51:18] "GET /api/v1.0/imagecode?cur=be7d7145-1e11-46a4-9b9b-3d79c73e76cf&pre=80163086-2ff2-4d69-9c87-4be9a4db2fcf HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/libs/yuntongxun/sms.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:52:13] "GET /api/v1.0/imagecode?cur=42ba944a-7be5-4725-afbc-e3d43b16777b&pre=be7d7145-1e11-46a4-9b9b-3d79c73e76cf HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:52:26] "POST /api/v1.0/smscode HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:52:28] "GET /api/v1.0/imagecode?cur=ffb7cda2-f5c3-4f34-9a58-0b8391dd5c88&pre=42ba944a-7be5-4725-afbc-e3d43b16777b HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/libs/yuntongxun/sms.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:54:27] "GET /api/v1.0/imagecode?cur=541d0a64-ccc7-4398-8bc4-f0e0c67671bc&pre=ffb7cda2-f5c3-4f34-9a58-0b8391dd5c88 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:54:36] "POST /api/v1.0/smscode HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:55:06] "GET /api/v1.0/imagecode?cur=d3f82206-ab1b-4bf3-893d-1cc0bba5702a&pre=541d0a64-ccc7-4398-8bc4-f0e0c67671bc HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:55:14] "GET /api/v1.0/imagecode?cur=b5f7a9f2-2f56-4a35-859d-8415130de264&pre=d3f82206-ab1b-4bf3-893d-1cc0bba5702a HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 19:55:23] "POST /api/v1.0/smscode HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/sea-l/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
