@@ -128,7 +128,7 @@ def check_login():
     data = {
         "user_id":user_dict
     }
-    return make_response(data)
+    return jsonify(errno=RET.OK,errmsg="ok",data=data)
 
 # 退出登录
 @api_blu.route("/session", methods=["DELETE"])
