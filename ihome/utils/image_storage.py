@@ -1,7 +1,9 @@
 # 七牛上传文件的工具类
-access_key = "kJ8wVO7lmFGsdvtI5M7eQDEJ1eT3Vrygb4SmR00E"
-secret_key= "rGwHyAvnlLK7rU4htRpNYzpuz0OHJKzX2O1LWTNl"
-bucket_name = "infonews"  # 存储空间名称
+access_key = "lOxunRhNjvKssGnBtQsrVj0H_NJLCLhi4WE45dKd"
+secret_key = "MhFU5UmXgGvJQ2k_Y-dliSxbiPD5bdvuJhSheiCC"
+bucket_name = "flask24"  # 存储空间名称
+
+# 存储空间名称
 
 
 def storage_image(data):

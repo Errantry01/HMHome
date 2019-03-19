@@ -10,18 +10,29 @@ from ihome.utils import constants
 from ihome.utils.response_code import RET
 
 
-# 获取图片验证码
+# 获取图片验证码 注册模块
 @api_blu.route("/imagecode")
 def get_image_code():
+    # 1.1 code_id: UUID唯一编码
+    code_id = request.args.get('cur')
+    # 2.1 code_id非空判断
+    if not code_id:
+        return jsonify(errno=RET.PARAMERR, errmsg="image code err")
+    # 2. 生成图片验证码
+    image_name, sea_image_name, image_data = captcha.generate_captcha()
     """
-    1. 获取传入的验证码编号，并编号是否有值
-    2. 生成图片验证码
-    3. 保存编号和其对应的图片验证码内容到redis
-    4. 返回验证码图片
-    :return:
+        mobile": mobile,
+        image_code": imageCode,
+        image_code_id": imageCodeId
     """
-    pass
+    # 3. 保存编号和其对应的图片验证码内容到redis#使用code_id作为key将验证码真实值存储到redis中，并且设置有效时长
+    sr.setex(code_id, constants.IMAGE_CODE_REDIS_EXPIRES, sea_image_name)
+    # 4. 返回验证码图片
 
+    response = make_response(image_data)
+    response.headers["Content-Type"] = "image/png"
+
+    return response
 
 
 # 获取短信验证码
@@ -38,7 +49,6 @@ def send_sms():
     :return:
     """
     pass
-
 
 
 # 用户注册
