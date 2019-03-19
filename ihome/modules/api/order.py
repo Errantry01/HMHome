@@ -163,6 +163,14 @@ def order_comment(order_id):
         db.session.rollback()
         return jsonify(errno=RET.DBERR, errmsg="保存评价异常")
 
+    # 为了在房屋详情中显示最新的评价信息，所以需要删除redis中该订单对应的房屋的信息
+    try:
+        sr.delete("house_info_%s" % order.house_id)
+
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="删除redis中该订单对应的房屋的信息异常")
+
     # 5.返回
     return jsonify(errno=RET.OK, errmsg="OK")
 
