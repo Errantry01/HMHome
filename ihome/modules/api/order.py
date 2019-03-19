@@ -24,13 +24,13 @@ def add_order():
     :return:
     """
     param_dict = request.json
-    start_data = param_dict.get('start_data')
+    start_date = param_dict.get('start_date')
     end_date = param_dict.get('end_date')
     house_id = param_dict.get('house_id')
     user_id = g.user_id
 
     # 校验参数
-    if not all([start_data, end_date, house_id]):
+    if not all([start_date, end_date, house_id]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数不足')
 
     # 查询房屋是否存在
@@ -53,24 +53,24 @@ def add_order():
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="查询订单数据异常")
     if order:
-        if not int(start_data) > int(order.end_date) or int(end_date) < int(order.begin_date):
+        if not (start_date > order.end_date or end_date < order.begin_date):
             return jsonify(errno=RET.DATAERR, errmsg='该时间段已有订单')
 
     # 生成订单模型，进行下单
     order = Order()
     order.user_id = user_id
     order.house_id = house_id
-    order.begin_date = start_data
+    order.begin_date = start_date
     order.end_date = end_date
-    order.user_id = user_id
-    order.house_id = house_id
     try:
         db.session.add(order)
         db.session.commit()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="保存订单数据异常")
-    return {"errno": "0",
+    # 返回数据
+    return {"data": {"order_id": order.id},
+            "errno": "0",
             "errmsg": "OK"}
 
 
@@ -83,7 +83,14 @@ def get_orders():
     2. 返回数据
     :return:
     """
-    pass
+    # 1获取参数
+
+    comment = request.args.get('comment')
+    if comment == 'landlord':
+        return current_app.send_static_file("ihome/static/html/lorders.html")
+    elif comment == 'custom':
+        pass
+
 
 
 # 接受/拒绝订单
