@@ -36,7 +36,7 @@ def add_order():
 
     # 查询房屋是否存在
     try:
-        house = House.query.filter(House.id == house_id).first().all()
+        house = House.query.filter(House.id == house_id).first()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="查询房屋数据异常")
@@ -49,30 +49,33 @@ def add_order():
 
     # 查询当前预订时间是否存在冲突
     try:
-        order = Order.query.filter(Order.house_id == house_id)
+        orders = Order.query.filter(Order.house_id == house_id).all()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="查询订单数据异常")
-    if order:
-        if not (start_date > order.end_date or end_date < order.begin_date):
+    if orders:
+        if not (start_date > orders.end_date or end_date < orders.begin_date):
             return jsonify(errno=RET.DATAERR, errmsg='该时间段已有订单')
 
-    # 生成订单模型，进行下单
-    order = Order()
-    order.user_id = user_id
-    order.house_id = house_id
-    order.begin_date = start_date
-    order.end_date = end_date
-    order.status = "WAIT_ACCEPT"
-    order.create_time = datetime.datetime.now()
+        # 生成订单模型，进行下单
+        orders_dict_list = []
+        for order in orders:
+            orders_dict_list.append(order.to_dict())
+        return jsonify(errno=0, errmsg='OK', data={"orders": orders_dict_list})
+    # order.user_id = user_id
+    # order.house_id = house_id
+    # order.begin_date = start_date
+    # order.end_date = end_date
+    # order.status = "WAIT_ACCEPT"
+    # order.create_time = datetime.datetime.now()
     try:
-        db.session.add(order)
+        db.session.add(orders)
         db.session.commit()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="保存订单数据异常")
     # 返回数据
-    return {"data": {"order_id": order.id},
+    return {"data": {"order_id": orders.id},
             "errno": "0",
             "errmsg": "OK"}
 
@@ -92,7 +95,7 @@ def get_orders():
     try:
         # 1.1登录用户是屋主
         if role == 'landlord':
-            houses = House.query.filter(House.user_id == user_id).all()
+            houses = House.query.filter(House.user_id == user_id)
             houses_ids = [house.id for house in houses]
             # 在Order表中查询预定了自己房子的订单,并按照创建订单的时间的倒序排序，也就是在此页面显示最新的订单信息
             orders = Order.query.filter(Order.house_id.in_(houses_ids)).order_by(Order.create_time.desc()).all()
@@ -168,13 +171,12 @@ def change_order_status(order_id):
     try:
         db.session.add(order)
         db.session.commit()
-
     except Exception as e:
         current_app.logger.error(e)
         db.session.rollback()
         return jsonify(errno=RET.DBERR, errmsg="保存订单状态异常")
     # 5.返回
-    return jsonify(errno=RET.OK, errmsg="OK")
+    return jsonify(errno=0, errmsg="OK")
 
 
 
