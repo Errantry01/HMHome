@@ -3,7 +3,7 @@ from datetime import datetime
 import re, random
 
 from alembic.autogenerate import render
-from flask import request, abort, current_app, jsonify, make_response, json, session
+from flask import request, abort, current_app, jsonify, make_response, json, session, g
 
 from ihome import sr, db
 from ihome.libs.captcha.pic_captcha import captcha
@@ -11,6 +11,7 @@ from ihome.libs.yuntongxun.sms import CCP
 from ihome.models import User
 from ihome.modules.api import api_blu
 from ihome.utils import constants
+from ihome.utils.common import login_required
 from ihome.utils.response_code import RET
 
 
@@ -252,23 +253,30 @@ def login_send_sms():
 
         # 3.4.1 生成6位的随机短信
     real_sms_code = random.randint(0, 999999)
+
     # 6位，前面补零
     real_sms_code = "%06d" % real_sms_code
+    print(real_sms_code)
+
     # 4.发送短信验证码成功
     try:
         result = CCP().send_template_sms(mobile, {real_sms_code, 5}, 1)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.THIRDERR, errmsg="云通信发送短信验证码异常")
+
     # 发送短信验证码失败：告知前端
     if result == -1:
         return jsonify(errno=RET.THIRDERR, errmsg="云通信发送短信验证码异常")
+
     # 6. redis中保存短信验证码内容
     sr.setex("SMS_CODE_%s" % mobile, constants.SMS_CODE_REDIS_EXPIRES, real_sms_code)
+
     # 7. 返回发送成功的响应
     return jsonify(errno=RET.OK, errmsg="发送短信验证码成功")
 
 
+# 短信验证码登录页面
 @api_blu.route('/login_sms', methods=['POST'])
 def login_sms():
     # 1. 获取参数和判断是否有值
@@ -309,6 +317,7 @@ def login_sms():
     # 记录用户最后一次登录时间
     user.last_login = datetime.now()
 
+
     try:
         db.session.commit()
     except Exception as e:
@@ -318,3 +327,45 @@ def login_sms():
 
     # 5. 登录成功
     return jsonify(errno=RET.OK, errmsg="OK")
+
+
+
+# 设置新密码
+@api_blu.route('/set_new_password', methods=['POST'])
+@login_required
+def set_new_password():
+    # 1. 获取到传入参数
+    data_dict = request.json
+    old_password = data_dict.get("password")
+    new_password = data_dict.get("password2")
+
+    if not all([old_password, new_password]):
+        return jsonify(errno=RET.PARAMERR, errmsg="参数有误")
+
+    if old_password != new_password:
+        return jsonify(errno=RET.DATAERR, errmsg='密码不相同')
+
+    # 2. 获取当前登录用户的信息
+    user_id = g.user_id
+
+    try:
+        user = User.query.get(user_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='数据库异常')
+
+    # if user.password == new_password:
+    #     return jsonify(errno=RET.DATAEXIST, errmsg='密码不能与原本密码相同')
+
+    # 保存新密码
+    user.password = new_password
+
+    try:
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg="保存数据失败")
+
+    return jsonify(errno=RET.OK, errmsg="保存成功")
+

@@ -31,6 +31,7 @@ function sendSMScode() {
 
     var params = {
         "mobile": mobile,
+        "phonecode":phonecode
 
     }
 
@@ -76,7 +77,7 @@ $(document).ready(function() {
     });
     // 注册的提交(判断参数是否为空)
     
-    $(".form-register").submit(function (e) {
+    $(".form-login-sms").submit(function (e) {
         e.preventDefault()
 
         // 取到用户输入的内容
@@ -107,7 +108,7 @@ $(document).ready(function() {
         })
 
         $.ajax({
-            url:"/api/v1.0/user",
+            url:"/api/v1.0/login_sms",
             type: "post",
             headers: {
                 "X-CSRFToken": getCookie("csrf_token")
@@ -117,7 +118,7 @@ $(document).ready(function() {
             success: function (resp) {
                 if (resp.errno == "0"){
                     // 直接回到首页
-                    location.href = "/index.html"
+                    location.href = "/set_new_password.html"
                 }else {
                     $("#password2-err span").html(resp.errmsg)
                     $("#password2-err").show()
