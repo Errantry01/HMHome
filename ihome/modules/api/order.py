@@ -1,5 +1,4 @@
-import datetime
-
+from datetime import datetime
 from ihome import db, sr
 from ihome.models import House, Order
 from ihome.utils.common import login_required
@@ -25,13 +24,13 @@ def add_order():
     :return:
     """
     param_dict = request.json
-    start_date = param_dict.get('start_date')
-    end_date = param_dict.get('end_date')
+    start_date_str = param_dict.get('start_date')
+    end_date_str = param_dict.get('end_date')
     house_id = param_dict.get('house_id')
     user_id = g.user_id
 
     # 校验参数
-    if not all([start_date, end_date, house_id]):
+    if not all([start_date_str, end_date_str, house_id]):
         return jsonify(errno=RET.PARAMERR, errmsg='参数不足')
 
     # 查询房屋是否存在
@@ -47,18 +46,22 @@ def add_order():
     if user_id == house.user_id:
         return jsonify(errno=RET.DATAERR, errmsg='用户为屋主,不能预定')
 
-    # 查询当前预订时间是否存在冲突
+    # 转换时间格式,查询当前预订时间是否存在冲突
+    start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+    end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
     try:
-        count = Order.query.filter(Order.house_id == house_id, Order.begin_date < end_date, Order.end_date > start_date).count
+        order_count = Order.query.filter(Order.house_id == house_id, Order.begin_date < end_date, Order.end_date > start_date).count()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="查询订单数据异常")
-    if count != 0:
+    if order_count > 0:
         return jsonify(errno=RET.DATAERR, errmsg='该时间段已有订单')
 
-    # 生成订单模型，进行下单
-    days = (end_date - start_date).days + 1
+    # 计算入住天数以及总价格
+    days = (end_date-start_date).days + 1
     amount = house.price * days
+
+    # 生成订单模型，进行下单
     order = Order()
     order.user_id = user_id
     order.house_id = house_id
