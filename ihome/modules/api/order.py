@@ -83,7 +83,7 @@ def change_order_status(order_id):
 
     # 3.修改订单状态
     if action == "accept":
-        order.status = "WAIT_PAYMENT"
+        order.status = "WAIT_COMMENT"
     else:
         if not reason:
             return jsonify(errno=RET.PARAMERR, errmsg="请输入拒绝原因")
