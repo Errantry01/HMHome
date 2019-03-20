@@ -1,5 +1,5 @@
 logs/log*
-migrations
+migrations/
 .idea
 .idea/workspace.xml
 # Byte-compiled / optimized / DLL files
