@@ -1,4 +1,4 @@
-log/log*
+logs/log*
 migrations/
 .idea
 .idea/workspace.xml
