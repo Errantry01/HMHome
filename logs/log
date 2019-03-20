@@ -7430,3 +7430,17 @@ INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_int
 WARNING /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
 INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 983-773-594
 INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 15:10:26] "GET /api/v1.0/areas HTTP/1.1" 500 -
+WARNING /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 983-773-594
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 17:30:07] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 17:37:09] "GET /api/v1.0/session HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 17:37:09] "GET /api/v1.0/houses/index HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 17:37:09] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 17:37:14] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 17:37:14] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 17:37:17] "GET / HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 17:37:17] "GET /api/v1.0/session HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 17:37:17] "GET /api/v1.0/houses/index HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 17:37:17] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 17:37:18] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 17:37:18] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
