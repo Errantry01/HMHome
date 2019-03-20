@@ -6623,3 +6623,5 @@ ERROR /Users/wzy/Desktop/itcastJob/寒假资料/项目实训/01-Flask项目实�
 INFO /Users/wzy/.virtualenvs/xjzx/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [04/Mar/2019 18:27:47] "GET /api/v1.0/areas HTTP/1.1" 200 -
 INFO /Users/wzy/.virtualenvs/xjzx/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [04/Mar/2019 18:27:47] "GET /favicon.ico HTTP/1.1" 200 -
 INFO /Users/wzy/.virtualenvs/xjzx/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [04/Mar/2019 18:27:47] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+WARNING /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/home_py3/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 189-386-808
