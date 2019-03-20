@@ -36,7 +36,7 @@ def add_order():
 
     # 查询房屋是否存在
     try:
-        house = House.query.filter(House.id == house_id).first()
+        house = House.query.get(house_id)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="查询房屋数据异常")
@@ -49,35 +49,32 @@ def add_order():
 
     # 查询当前预订时间是否存在冲突
     try:
-        orders = Order.query.filter(Order.house_id == house_id).all()
+        count = Order.query.filter(Order.house_id == house_id, Order.begin_date < end_date, Order.end_date > start_date).count
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="查询订单数据异常")
-    if orders:
-        if not (start_date > orders.end_date or end_date < orders.begin_date):
-            return jsonify(errno=RET.DATAERR, errmsg='该时间段已有订单')
+    if count != 0:
+        return jsonify(errno=RET.DATAERR, errmsg='该时间段已有订单')
 
-        # 生成订单模型，进行下单
-        orders_dict_list = []
-        for order in orders:
-            orders_dict_list.append(order.to_dict())
-        return jsonify(errno=0, errmsg='OK', data={"orders": orders_dict_list})
-    # order.user_id = user_id
-    # order.house_id = house_id
-    # order.begin_date = start_date
-    # order.end_date = end_date
-    # order.status = "WAIT_ACCEPT"
-    # order.create_time = datetime.datetime.now()
+    # 生成订单模型，进行下单
+    days = (end_date - start_date).days + 1
+    amount = house.price * days
+    order = Order()
+    order.user_id = user_id
+    order.house_id = house_id
+    order.begin_date = start_date
+    order.end_date = end_date
+    order.house_price = house.price
+    order.days = days
+    order.amount = amount
     try:
-        db.session.add(orders)
+        db.session.add(order)
         db.session.commit()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="保存订单数据异常")
     # 返回数据
-    return {"data": {"order_id": orders.id},
-            "errno": "0",
-            "errmsg": "OK"}
+    return jsonify(errno=0, errmsg='OK', data={'order_id': order.id})
 
 
 # 获取我的订单
