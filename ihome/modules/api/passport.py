@@ -159,7 +159,7 @@ def login():
         return jsonify(errno=RET.PARAMERR,errmsg="参数错误")
     #4:查询用户是否存在
     try:
-        user = User.query.filter_by(mobile=mobile).first()
+        user = User.query.filter(User.mobile == mobile).first()
     except Exception as e:
         return jsonify(errni=RET.USERERR,errmsg="用户不存在")
     if not user:
@@ -167,20 +167,19 @@ def login():
     #5:判断密码是否正确
     if user.check_passowrd(password) is False:
         return jsonify(errno=RET.PWDERR,errmsg="密码错误")
-    #6更新最后一次登录时间
-    user.last_login = datetime.now()
-    #7:将修改操作提交到数据库
+    # print(user)
+    # #7:将修改操作提交到数据库
     try:
         db.session.commit()
     except Exception as e:
         db.session.rollback()
         return jsonify(errno=RET.DBERR,errmsg="提交数据错误")
-    #8:使用session记录用户信息
-    db.session["user_id"] = user.id
-    db.session["mobile"] = user.mobile
-    db.session["name"] = user.name
-    #9:返回数据
-    return jsonify(errno=RET.OK,errmsg="ok")
+    # 8:使用session记录用户信息
+    session["user_id"] = user.id
+    session["mobile"] = user.mobile
+    session["name"] = user.name
+    # #9:返回数据
+    return jsonify(errno=RET.OK ,errmsg="ok")
 
 
 
@@ -191,21 +190,26 @@ def check_login():
     检测用户是否登录，如果登录，则返回用户的名和用户id
     :return:
     """
+    # user_id = session.get("user_id")
+    # # print(user_id)
+    # user = None
+    # user_dict = []
+    # if user_id:
+    #     try:
+    #         user = User.query.get(user_id)
+    #     except Exception as e:
+    #         return jsonify(errno=RET.USERERR,errmsg="查询用户失败")
+    #
+    #     return jsonify(errno=RET.OK, errmsg="登录成功",data ={"name": user_id})
+
+    name = session.get("name")
     user_id = session.get("user_id")
-    user = None
-    user_dict = []
-    if user_id:
-        try:
-            user = User.query.get(user_id)
-        except Exception as e:
-            return jsonify(errno=RET.USERERR,errmsg="查询用户失败")
+    # name不为空，则返回ok，并将name以字典形式传给前端，为空则返回对应错误信息
+    if name is not None:
+        return jsonify(errno=RET.OK, errmsg="true", data={"name": name,"user_id":user_id})
+    else:
+        return jsonify(errno=RET.SESSIONERR, errmsg="false")
 
-
-        user_dict = user.to_dict() if user else None
-    data = {
-        "user_id":user_dict
-    }
-    return jsonify(errno=RET.OK,errmsg="ok",data=data)
 
 # 退出登录
 @api_blu.route("/session", methods=["DELETE"])

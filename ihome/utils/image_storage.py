@@ -1,14 +1,11 @@
 # 七牛上传文件的工具类
 access_key = "lOxunRhNjvKssGnBtQsrVj0H_NJLCLhi4WE45dKd"
-<<<<<<< HEAD
+
 secret_key= "MhFU5UmXgGvJQ2k_Y-dliSxbiPD5bdvuJhSheiCC"
 bucket_name = "flask24"  # 存储空间名称
-=======
-secret_key = "MhFU5UmXgGvJQ2k_Y-dliSxbiPD5bdvuJhSheiCC"
-bucket_name = "flask24"  # 存储空间名称
 
-# 存储空间名称
->>>>>>> ef9a00d23f32e2fe2ea104b4ebdf90c84e259228
+
+
 
 
 def storage_image(data):
