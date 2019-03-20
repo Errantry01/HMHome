@@ -69,6 +69,8 @@ $(document).ready(function(){
                 $(".register-login").hide();
                 $(".user-name").html(resp.data.name)
                 $(".user-info").show()
+                $(".login_out").show()
+
             }else {
                 $(".register-login").show();
             }
@@ -124,3 +126,7 @@ $(document).ready(function(){
         $("#start-date-input").val(date);
     });
 })
+
+// $(".login_out").onclick(function (resp) {
+//
+// })

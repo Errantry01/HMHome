@@ -6,6 +6,8 @@ from flask_migrate import Migrate
 from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
 from redis import StrictRedis
+import pymysql
+pymysql.install_as_MySQLdb()
 
 from config import config_dict
 
