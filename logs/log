@@ -7104,3 +7104,5 @@ INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/
 INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:57:13] "GET /favicon.ico HTTP/1.1" 200 -
 INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:59:20] "GET /set_new_password.html HTTP/1.1" 200 -
 INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 14:16:16] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
