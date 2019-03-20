@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 
 from flask import current_app, jsonify, request, g, session, json,make_response
 from ihome import sr, db
@@ -99,7 +99,7 @@ def get_house_detail(house_id):
     ③尝试从session中去获取用户id，如果存在，说明用户为登录状态，那么将用户id返回给前端，不存在返回user_id = -1
 
     """
-    user_id = session.get("user_id")
+    user_id = session.get("user_id", "-1")
     if not house_id:
         return jsonify(errno=RET.PARAMERR, errmsg="参数不足")
 
@@ -169,21 +169,83 @@ def house_index():
 # 搜索房屋/获取房屋列表
 @api_blu.route('/houses')
 def get_house_list():
-    # 1.获取参数
-    # params_dict = request.json
-    # # 区域id
-    # aid = params_dict.get("aid")
-    # # 开始日期
-    # sd = params_dict.get("sd")
-    # # 结束时间
-    # ed = params_dict.get("ed")
-    # p = params_dict.get("p", 1)
-    # # 排序方式 booking(订单量), price­inc(低到高), pricedes(高到低)
-    # sk = params_dict.get("sk")
-    # # 参数检验
-    # if not all([aid, sd, ed]):
-    #     return jsonify(errno=RET.PARAMERR, errmsg="参数不足")
-    #
-    #
-    # return jsonify(data={"errno":RET.OK,"errmsg": "OK"})
-    pass
+    start_date = request.args.get("sd")  # 用户入住日期
+    end_date = request.args.get("ed")  # 用户离开日期
+    area_id = request.args.get("aid")  # 入住区县
+    sort_key = request.args.get("sk", "new")  # 排序关键字,当未选择排序条件时，默认按最新排序，这个new关键字根据前端定义走的
+    page = request.args.get("p")  # 页数
+    print(start_date,end_date)
+    try:
+        if start_date:
+            start_date = datetime.strptime(start_date, "%Y-%m-%d")
+
+        if end_date:
+            end_date = datetime.strptime(end_date, "%Y-%m-%d")
+        # 当用户两者都选择情况下，需要进行判断，入住日期肯定是小于或等于离开日期的
+        if start_date and end_date:
+            assert start_date <= end_date
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg="日期参数有误")
+    if area_id:
+        try:
+            area = Area.query.get(area_id)
+        except Exception as e:
+            current_app.logger.error(e)
+            return jsonify(errno=RET.PARAMERR, errmsg="区县参数有误")
+
+    try:
+        page = int(page)
+    except Exception as e:
+        # 如果出现异常则使page=1
+        page = 1
+        current_app.logger.error(e)
+    # 定义过滤条件的参数列表容器以及存放冲突订单对象
+    filter_params = []
+    conflict_orders = None
+    try:
+        if start_date and end_date:
+            # 查询冲突的订单所有对象
+            conflict_orders = Order.query.filter(Order.begin_date <= end_date, Order.end_date >= start_date).all()
+        elif start_date:
+            # 用户只选择入住日期
+            conflict_orders = Order.query.filter(Order.end_date >= start_date).all()
+        elif end_date:
+            # 用户只选择离开日期
+            conflict_orders = Order.query.filter(Order.begin_date <= end_date).all()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="数据库异常")
+    if conflict_orders:
+        # 从订单中获取冲突的房屋id
+        conflict_house_ids = [order.house_id for order in conflict_orders]  # 使用列表生成式进行简写操作
+
+        # 如果冲突的房屋id不为空，向查询参数中添加条件
+        if conflict_house_ids:
+            filter_params.append(House.id.notin_(conflict_house_ids))
+    if area_id:
+        filter_params.append(House.area_id == area_id)
+
+    if sort_key == "booking":  # 入住做多
+        house_query = House.query.filter(*filter_params).order_by(House.order_count.desc())
+    elif sort_key == "price-inc":  # 价格低-高
+        house_query = House.query.filter(*filter_params).order_by(House.price.asc())
+    elif sort_key == "price-des":  # 价格高-低
+        house_query = House.query.filter(*filter_params).order_by(House.price.desc())
+    else:
+        # 如果用户什么都没选择，则按照最新排序（数据库字段创建时间）
+        house_query = House.query.filter(*filter_params).order_by(House.create_time.desc())
+
+    try:
+        page_obj = house_query.paginate(page=page, per_page=constants.HOUSE_LIST_PAGE_CAPACITY, error_out=False)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="数据库异常")
+    # 获取分页页面数据
+    houses = []
+    house_list = page_obj.items
+    for house in house_list:
+        houses.append(house.to_basic_dict())
+    # 获取总页数，并返回正确响应数据
+    total_page = page_obj.pages
+    return jsonify(errno=RET.OK, errmsg="OK", data={"houses": houses, "total_page": total_page, "current_page": page})
