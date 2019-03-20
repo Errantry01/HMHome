@@ -10845,3 +10845,5 @@ INFO /home/python/.virtualenvs/flask_HMHome/lib/python3.6/site-packages/werkzeug
 WARNING /home/python/.virtualenvs/flask_HMHome/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
 INFO /home/python/.virtualenvs/flask_HMHome/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 274-365-817
 
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
