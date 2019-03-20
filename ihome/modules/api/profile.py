@@ -87,6 +87,7 @@ def set_user_name():
     return jsonify(errno=RET.OK, errmsg='用户名修改成功')
 
 
+
 # 上传个人头像
 @api_blu.route('/user/avatar', methods=['POST'])
 @login_required
@@ -187,6 +188,7 @@ def get_user_auth():
     return jsonify(errno=RET.OK, errmsg='用户实名认证成功')
 
 
+
 # 设置用户实名信息
 @api_blu.route('/user/auth', methods=["POST"])
 @login_required
@@ -204,9 +206,9 @@ def set_user_auth():
     real_name = request.json.get("real_name")
     id_card = request.json.get("id_card")
     if not user_id:
-        return jsonify(errno=RET.USERERR,errmsg="用户未登录")
-    if not all([real_name,id_card]):
-        return jsonify(errno=RET.PARAMERR,errmsg="参数不足")
+        return jsonify(errno=RET.USERERR, errmsg="用户未登录")
+    if not all([real_name, id_card]):
+        return jsonify(errno=RET.PARAMERR, errmsg="参数不足")
     User.real_name = real_name
     User.id_card = id_card
 
@@ -214,5 +216,5 @@ def set_user_auth():
         db.session.commit()
     except Exception as e:
         db.session.rollback()
-        return jsonify(errno=RET.DBERR,errmsg="认证数据保存异常")
-    return jsonify(errno=RET.OK,errmsg="ok")
+        return jsonify(errno=RET.DBERR, errmsg="认证数据保存异常")
+    return jsonify(errno=RET.OK, errmsg="ok")
