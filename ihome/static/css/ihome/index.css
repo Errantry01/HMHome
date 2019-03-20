@@ -103,10 +103,3 @@ body {
 .end-date {
     display: none;
 }
-.login_out{
-    height: 20px;
-    line-height: 20px;
-    text-align: center;
-    font-size: 15px;
-    display: none;
-}
