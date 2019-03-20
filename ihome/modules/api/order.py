@@ -36,7 +36,7 @@ def add_order():
 
     # 查询房屋是否存在
     try:
-        house = House.query.filter(House.id == house_id).first()
+        house = House.query.filter(House.id == house_id).first().all()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="查询房屋数据异常")
