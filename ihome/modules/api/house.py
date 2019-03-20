@@ -79,8 +79,6 @@ def get_areas():
     return '{"errno":"0", "errmsg":"OK", "data":%s}' % json_area, 200, {"Content-Type": "application/json"}
 
 
-
-
 # 上传房屋图片
 @api_blu.route("/houses/<int:house_id>/images", methods=['POST'])
 @login_required
@@ -156,7 +154,7 @@ def save_new_house():
     }
     :return:
     """
-    user_id = g.user.id
+    user_id = g.user_id
     house_data = request.get_json()
 
     title = house_data.get("title")
@@ -210,12 +208,12 @@ def save_new_house():
             facilities = Facility.query.filter(Facility.id.in_(facility_id)).all()
         except Exception as e:
             current_app.logger.error(e)
-            return jsonify(errno=RET.DBERR, errmsg="参数有误")
+            return jsonify(errno=RET.DBERR, errmsg="数据异常")
 
     if facilities:
         house.facilities = facilities
         try:
-            db.session.add()
+            db.session.add(house)
             db.session.commit()
         except Exception as e:
             current_app.logger.error(e)
