@@ -108,6 +108,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+.idea/workspace.xml
+ migrations/
+ logs/log*
 *.py[cod]
-logs/log*
-migrations
+
