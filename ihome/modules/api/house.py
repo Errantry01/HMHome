@@ -21,46 +21,71 @@ def get_user_house_list():
     2. 查询数据
     :return:
     """
-    # 获取登录用户的id
+    # 获取登录用户的id以及前段数据
     user_id = g.user_id
+    if not user_id:
+        return jsonify(errno=RET.DATAERR, errmsg='用户未登录')
+    start_date = request.args.get("sd")  # 用户入住日期
+    end_date = request.args.get("ed")  # 用户离开日期
+    area_id = request.args.get("aid")  # 入住区县
+    sort_key = request.args.get("sk", "new")  # 排序关键字,当未选择排序条件时，默认按最新排序，这个new关键字根据前端定义走的
+    page = request.args.get("p")  # 页数
 
-    # 查询数据
-    houses_list = []
+    # 验证用户填写的日期信息是否正确
     try:
-        # houses = House.query.filter(House.user_id == user_id).all()
-        user = User.query.get(user_id)
-        houses = user.houses
+        if start_date:
+            start_date = datetime.strptime(start_date, "%Y-%m-%d")
+
+        if end_date:
+            end_date = datetime.strptime(end_date, "%Y-%m-%d")
+        # 当用户两者都选择情况下，需要进行判断，入住日期肯定是小于或等于离开日期的
+        if start_date and end_date:
+            assert start_date <= end_date
     except Exception as e:
         current_app.logger.error(e)
-        return jsonify(errno=RET.DBERR, errmsg="查询房屋数据异常")
+        return jsonify(errno=RET.PARAMERR, errmsg="日期参数有误")
 
+    # 验证用户填写的地址信息是否正确
+    if area_id:
+        try:
+            area = Area.query.get(area_id)
+        except Exception as e:
+            current_app.logger.error(e)
+            return jsonify(errno=RET.PARAMERR, errmsg="区县参数有误")
 
-    for house in houses:
-        houses_list.append(house.to_basic_dict())
+    # 定义过滤条件的参数列表容器
+    filter_params = []
+    if area_id:
+        filter_params.append(House.area_id == area_id)
 
-    # 获取房屋信息
-    # for house in houses:
-    #     try:
-    #         house_area = Area.query.filter(house.area_id == Area.id).first()
-    #         house_image = HouseImage.query.filter(house.id == HouseImage.house_id).first()
-    #         house_user = User.query.filter(User.id == house.user_id).first()
-    #     except Exception as e:
-    #         current_app.logger.error(e)
-    #         return jsonify(errno=RET.DBERR, errmsg="查询用户数据异常")
-        #
-        # # 组织返回数据,并返回
-        # data = {'data': [{"address": house.address,
-        #                   "area_name": house_area.name,
-        #                   "ctime": house.create_time,
-        #                   "house_id": house.id,
-        #                   "index_image_url": house_image.url,
-        #                   "order_count": house.order_count,
-        #                   "price": house.price,
-        #                   "room_count": house.room_count,
-        #                   "title": house.title,
-        #                   "user_avatar": house_user.avatar_url}]
-        #         }
-        return jsonify(errno=0, errmsg='OK', data={"houses":houses_list})
+    if sort_key == "booking":  # 入住做多
+        house_query = House.query.filter(*filter_params).order_by(House.order_count.desc())
+    elif sort_key == "price-inc":  # 价格低-高
+        house_query = House.query.filter(*filter_params).order_by(House.price.asc())
+    elif sort_key == "price-des":  # 价格高-低
+        house_query = House.query.filter(*filter_params).order_by(House.price.desc())
+    else:
+        # 如果用户什么都没选择，则按照最新排序（数据库字段创建时间）
+        house_query = House.query.filter(*filter_params).order_by(House.create_time.desc())
+
+    # 分页显示房屋列表
+    house_list = []
+    total_page = 1
+    current_page = 1
+    try:
+        paginate = house_query.paginate(page=page, per_page=constants.HOUSE_LIST_PAGE_CAPACITY, error_out=False)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询用户数据异常")
+    house_list = paginate.items
+    current_page = paginate.page
+    total_page = paginate.pages
+
+    # 组织房屋列表数据并返回
+    houses = []
+    for house in house_list:
+        houses.append(house.to_basic_dict())
+    return jsonify(errno=RET.OK, errmsg="OK", data={"houses": houses, "total_page": total_page, "current_page": current_page})
 
 
 # 获取地区信息
