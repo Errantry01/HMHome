@@ -25,36 +25,42 @@ def get_user_house_list():
     user_id = g.user_id
 
     # 查询数据
-    houses = []
+    houses_list = []
     try:
-        houses = House.query.filter(House.user_id == user_id).all()
+        # houses = House.query.filter(House.user_id == user_id).all()
+        user = User.query.get(user_id)
+        houses = user.houses
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="查询房屋数据异常")
 
-    # 获取房屋信息
-    for house in houses:
-        try:
-            house_area = Area.query.filter(house.area_id == Area.id).first()
-            house_image = HouseImage.query.filter(house.id == HouseImage.house_id).first()
-            house_user = User.query.filter(User.id == house.user_id).first()
-        except Exception as e:
-            current_app.logger.error(e)
-            return jsonify(errno=RET.DBERR, errmsg="查询用户数据异常")
 
-        # 组织返回数据,并返回
-        data = {'data': [{"address": house.address,
-                          "area_name": house_area.name,
-                          "ctime": house.create_time,
-                          "house_id": house.id,
-                          "img_url": house_image.url,
-                          "order_count": house.order_count,
-                          "price": house.price,
-                          "room_count": house.room_count,
-                          "title": house.title,
-                          "user_avatar": house_user.avatar_url}]
-                }
-        return jsonify(errno=0, errmsg='OK', data=data)
+    for house in houses:
+        houses_list.append(house.to_basic_dict())
+
+    # 获取房屋信息
+    # for house in houses:
+    #     try:
+    #         house_area = Area.query.filter(house.area_id == Area.id).first()
+    #         house_image = HouseImage.query.filter(house.id == HouseImage.house_id).first()
+    #         house_user = User.query.filter(User.id == house.user_id).first()
+    #     except Exception as e:
+    #         current_app.logger.error(e)
+    #         return jsonify(errno=RET.DBERR, errmsg="查询用户数据异常")
+        #
+        # # 组织返回数据,并返回
+        # data = {'data': [{"address": house.address,
+        #                   "area_name": house_area.name,
+        #                   "ctime": house.create_time,
+        #                   "house_id": house.id,
+        #                   "index_image_url": house_image.url,
+        #                   "order_count": house.order_count,
+        #                   "price": house.price,
+        #                   "room_count": house.room_count,
+        #                   "title": house.title,
+        #                   "user_avatar": house_user.avatar_url}]
+        #         }
+        return jsonify(errno=0, errmsg='OK', data={"houses":houses_list})
 
 
 # 获取地区信息
@@ -175,6 +181,15 @@ def save_new_house():
     if not all([title, price, area_id, address, room_count, acreage, unit, capacity, beds, deposit, min_days, max_days]):
         return jsonify(errno=RET.PARAMERR, errmsg="参数不足")
 
+    # 判断房屋单价和押金是否为正确参数
+    try:
+        price = int(float(price) * 100)
+        deposit = int(float(deposit) * 100)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+
     # 查询城区id是否存在
     try:
         area = Area.query.get(area_id)
@@ -215,7 +230,7 @@ def save_new_house():
     if facilities:
         house.facilities = facilities
         try:
-            db.session.add()
+            db.session.add(house)
             db.session.commit()
         except Exception as e:
             current_app.logger.error(e)
