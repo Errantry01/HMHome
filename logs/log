@@ -6857,3 +6857,7 @@ INFO /home/python/.vritualenvs/py_flask/lib/python3.6/site-packages/werkzeug/_in
 INFO /home/python/.vritualenvs/py_flask/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
 WARNING /home/python/.vritualenvs/py_flask/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
 INFO /home/python/.vritualenvs/py_flask/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 123-292-549
+INFO /home/python/.vritualenvs/py_flask/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/HMHome/ihome/modules/api/house.py', reloading
+INFO /home/python/.vritualenvs/py_flask/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.vritualenvs/py_flask/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.vritualenvs/py_flask/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 123-292-549
