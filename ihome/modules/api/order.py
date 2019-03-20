@@ -106,19 +106,24 @@ def get_orders():
 
         # 组织用户订单数据并返回
         for order in orders:
+            try:
+                order_house = House.query.filter(House.id == order.house_id).first()
+            except Exception as e:
+                current_app.logger.error(e)
+                return jsonify(errno=RET.DBERR, errmsg="查询用户数据异常")
             data = {'orders':[{"amount": order.amount,
                                "comment": order.comment,
                                "ctime": order.create_time,
                                "days": order.days,
                                "end_date": order.end_date,
-                               "img_url": '',
+                               "img_url": '#',
                                "order_id": order.id,
                                "start_date": order.begin_date,
                                "status": order.status,
-                               "title": '我的订单'
+                               "title": order_house.title
                                }]
                     }
-            return {'data':data,
+            return {'data': data,
                     "errno": "0",
                     "errmsg": "OK"
                     }
