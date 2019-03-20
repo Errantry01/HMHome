@@ -44,6 +44,7 @@ function setEndDate() {
     $("#end-date-modal").modal("hide");
 }
 
+
 function goToSearchPage(th) {
     var url = "/search.html?";
     url += ("aid=" + $(th).attr("area-id"));
