@@ -44,6 +44,7 @@ function setEndDate() {
     $("#end-date-modal").modal("hide");
 }
 
+
 function goToSearchPage(th) {
     var url = "/search.html?";
     url += ("aid=" + $(th).attr("area-id"));
@@ -69,6 +70,7 @@ $(document).ready(function(){
                 $(".register-login").hide();
                 $(".user-name").html(resp.data.name)
                 $(".user-info").show()
+
             }else {
                 $(".register-login").show();
             }
@@ -124,3 +126,4 @@ $(document).ready(function(){
         $("#start-date-input").val(date);
     });
 })
+

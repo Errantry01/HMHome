@@ -9,7 +9,6 @@ from redis import StrictRedis
 import pymysql
 pymysql.install_as_MySQLdb()
 
-
 from config import config_dict
 
 # 将数据库连接对象全局化(方便其他文件使用)
