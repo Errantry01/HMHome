@@ -69,6 +69,8 @@ $(document).ready(function(){
                 $(".register-login").hide();
                 $(".user-name").html(resp.data.name)
                 $(".user-info").show()
+                $(".login_out").show()
+
             }else {
                 $(".register-login").show();
             }
@@ -124,3 +126,21 @@ $(document).ready(function(){
         $("#start-date-input").val(date);
     });
 })
+
+// $(".login_out").onclick(function (resp) {
+//
+// })
+function logout() {
+    $.ajax({
+        url: "/api/v1.0/session",
+        type: "DELETE",
+        contentType: "application/json",
+        headers: {
+            "X-CSRFToken": getCookie("csrf_token")
+        },
+        success: function (resp) {
+            // 刷新当前界面
+            location.reload()
+        }
+    })
+}

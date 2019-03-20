@@ -1,11 +1,12 @@
-.idea
+.idea/
 logs/log*
-migrations
+migrations/
 .idea/workspace.xml
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+logs/log*
 
 # C extensions
 *.so
@@ -106,3 +107,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+.idea/workspace.xml
+ migrations/
+ logs/log*
+*.py[cod]
+
