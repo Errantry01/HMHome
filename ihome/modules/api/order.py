@@ -48,7 +48,7 @@ def add_order():
 
     # 查询当前预订时间是否存在冲突
     try:
-        order = Order.query.filter(Order.house_id == house_id)
+        order = Order.query.filter(Order.house_id == house_id).all()
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="查询订单数据异常")
