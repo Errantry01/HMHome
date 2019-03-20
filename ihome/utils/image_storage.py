@@ -6,8 +6,6 @@ bucket_name = "flask24"  # 存储空间名称
 
 
 
-
-
 def storage_image(data):
     """进行文件上传的工具类"""
     """
