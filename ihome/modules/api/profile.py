@@ -82,7 +82,7 @@ def set_user_name():
     except Exception as e:
         current_app.logger.error(e)
         db.session.rollback()
-        return jsonify(errno=RET.DBERR, errmsg='数据库异常')
+        return jsonify(errno=RET.DBERR, errmsg='用户名保存数据库异常')
     # 3.返回结果
     return jsonify(errno=RET.OK, errmsg='用户名修改成功')
 
@@ -131,7 +131,7 @@ def set_user_avatar():
     except Exception as e:
         current_app.logger.error(e)
         db.session.rollback()
-        return jsonify(errno=RET.DBERR, errmsg='数据库异常')
+        return jsonify(errno=RET.DBERR, errmsg='头像保存数据库异常')
 
     # 完整头像地址返回
     full_url = QINIU_DOMIN_PREFIX + avatar_name

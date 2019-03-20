@@ -107,4 +107,4 @@ venv.bak/
 
 *.py[cod]
 logs/log*
-migrations
+migrations/

@@ -6767,3 +6767,340 @@ INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/
 INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 14:54:38] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
 INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 14:54:38] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 200 -
 INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [19/Mar/2019 14:54:38] "GET /api/v1.0/imagecode?cur=b97fae76-cd33-4129-9805-b1ad21f93fcc&pre= HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:18:52] "GET /login HTTP/1.1" 404 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:00] "GET /login.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:00] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:00] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:00] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:00] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:00] "GET /static/css/ihome/login.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:00] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:00] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:00] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:00] "GET /static/js/ihome/login.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:00] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:06] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:06] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:06] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:53] "GET /login.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:19:53] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/liyouping/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/liyouping/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/liyouping/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/liyouping/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/liyouping/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/liyouping/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:40:00] "GET /register.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:40:01] "GET /api/v1.0/imagecode?cur=97d96421-eb7e-4f07-bf19-208d472e4ac7&pre= HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:38] "GET /login_sms.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:38] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:43] "GET /register.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:44] "GET /api/v1.0/imagecode?cur=b9427bf4-f931-4267-9f5f-12c53b937c2b&pre= HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:44] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:46] "GET /register.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:46] "GET /api/v1.0/imagecode?cur=177cd229-5b73-4700-b25b-6491c60d9206&pre= HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:46] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:49] "GET /login_sms.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:49] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:52] "GET /login_sms.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:52] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:54] "GET /login_sms.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:54] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:58] "GET /login_sms.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:42:58] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:43:48] "GET /login_sms.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:43:48] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:43:57] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:44:06] "GET /login_sms.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:44:07] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:08] "GET /login_sms.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:08] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:15] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:15] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:15] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:15] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:15] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:15] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:15] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:15] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:15] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:15] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:15] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:15] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:45:15] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:49:22] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:49:22] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:51:04] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:51:04] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:51:04] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:51:04] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:51:04] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:51:04] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:51:04] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:51:04] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:51:04] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:51:04] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:51:04] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:51:04] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:51:04] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:52:59] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:52:59] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:52:59] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:52:59] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:52:59] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:52:59] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:52:59] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:52:59] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:52:59] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:52:59] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:52:59] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:52:59] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:52:59] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /static/js/ihome/login_sms?v=4 HTTP/1.1" 404 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /static/js/ihome/login_sms?v=4 HTTP/1.1" 404 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:54:48] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:55:50] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:55:50] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:55:50] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:55:50] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:55:50] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:55:50] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:55:50] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:55:50] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:55:50] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:55:50] "GET /static/js/ihome/login_send_sms.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:55:50] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:55:50] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:55:50] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:56:32] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:56:32] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:56:32] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:56:32] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:56:32] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:56:32] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:56:32] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:56:32] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:56:32] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:56:32] "GET /static/js/ihome/login_send_sms.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:56:32] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:56:32] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:56:32] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:08] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:08] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:08] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:08] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:08] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:08] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:08] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:08] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:08] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:08] "GET /static/js/ihome/login_send_sms.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:08] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:08] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:08] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:26] "GET /login_sms.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:57:26] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:58:11] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:58:12] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:58:12] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:58:12] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:58:12] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:58:12] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:58:12] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:58:12] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:58:12] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:58:12] "GET /static/js/ihome/login_send_sms.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:58:12] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:58:12] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:58:12] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:28] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:28] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:29] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:29] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:29] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:29] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:29] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:29] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:29] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:29] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:29] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:29] "GET /static/js/ihome/login_send_sms.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:29] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:29] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 10:59:29] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:23] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:23] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:23] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:23] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:23] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:23] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:23] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:23] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:23] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:23] "GET /static/js/ihome/login_send_sms.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:23] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:23] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:23] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:05:32] "POST /api/v1.0/login_sms HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/liyouping/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:09:20] "GET /login.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:09:20] "GET /static/css/ihome/login.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:09:20] "GET /static/js/ihome/login.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:09:35] "POST /api/v1.0/login_sms HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:39] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:39] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:39] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:39] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:39] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:39] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:39] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:39] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:39] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:39] "GET /static/js/ihome/login_send_sms.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:39] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:39] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:39] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:14:46] "POST /api/v1.0/login_sms HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:29] "GET /login_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:29] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:29] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:29] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:29] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:29] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:29] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:29] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:29] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:29] "GET /static/js/ihome/login_send_sms.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:29] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:29] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:29] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:15:40] "POST /api/v1.0/login_sms HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:16:04] "POST /api/v1.0/login_sms HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/liyouping/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:33] "GET /login_sms.html HTTP/1.1" 404 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:33] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:42] "GET /login.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:42] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:42] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:42] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:42] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:42] "GET /static/css/ihome/login.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:42] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:42] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:42] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:42] "GET /static/js/ihome/login.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:42] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:42] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:44] "GET /login_send_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:44] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:44] "GET /static/js/ihome/login_send_sms.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:19:51] "POST /api/v1.0/login_sms HTTP/1.1" 405 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:14] "GET /login_send_sms.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:14] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:14] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:14] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:14] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:14] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:14] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:14] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:14] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:14] "GET /static/js/ihome/login_send_sms.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:14] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:14] "GET /static/plugins/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:14] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:20:20] "POST /api/v1.0/login_send_sms HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/liyouping/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:38:06] "GET /register.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:38:06] "GET /static/js/ihome/register.js?v=4 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:38:06] "GET /api/v1.0/imagecode?cur=f14629a7-6c95-41f1-964a-ed90341e558c&pre= HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:38:06] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:38:07] "GET /register.html HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:38:07] "GET /api/v1.0/imagecode?cur=1bed0fe3-4802-4b10-9619-b1e8804baf09&pre= HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:38:07] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:45:51] "GET /login.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:45:51] "GET /static/css/ihome/login.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:45:51] "GET /static/js/ihome/login.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:45:51] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/liyouping/HMHome/ihome/modules/api/passport.py', reloading
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 234-367-960
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:47:53] "GET /index.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:47:53] "GET /static/plugins/swiper/css/swiper.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:47:53] "GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:47:53] "GET /static/css/ihome/index.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:47:53] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:47:53] "GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:47:53] "GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:47:53] "GET /static/js/template.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:47:53] "GET /static/js/ihome/index.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:47:53] "GET /api/v1.0/session HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:47:53] "GET /api/v1.0/houses/index HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:47:53] "GET /api/v1.0/areas HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:48:33] "GET /profile.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:48:33] "GET /static/css/ihome/profile.css HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:48:33] "GET /static/js/jquery.form.min.js HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:48:33] "GET /static/js/ihome/profile.js?v=5 HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:48:33] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:48:52] "GET /api/v1.0/user HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:50:34] "GET /api/v1.0/imagecode?cur=0f7be6b2-1d4e-440a-81dd-394946d3bd61&pre= HTTP/1.1" 500 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:55:37] "GET /set_new_passport.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:56:21] "GET /set_new_passport.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:56:21] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:56:33] "GET /set_new_passport.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:56:33] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:56:50] "GET /set_new_passport.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:56:50] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:57:13] "GET /set_new_passport.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:57:13] "GET /favicon.ico HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 11:59:20] "GET /set_new_password.html HTTP/1.1" 200 -
+INFO /home/python/.virtualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 14:16:16] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
