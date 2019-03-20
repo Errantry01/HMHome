@@ -1,3 +1,6 @@
+.idea/dataSources.local.xml
+.idea/dataSources.xml
+.idea/workspace.xml
 .idea/
 logs/log*
 migrations/
