@@ -76,4 +76,19 @@ def set_user_auth():
     6. 返回结果
     :return:
     """
-    pass
+    user_id = g.user_id
+    real_name = request.json.get("real_name")
+    id_card = request.json.get("id_card")
+    if not user_id:
+        return jsonify(errno=RET.USERERR,errmsg="用户未登录")
+    if not all([real_name,id_card]):
+        return jsonify(errno=RET.PARAMERR,errmsg="参数不足")
+    User.real_name = real_name
+    User.id_card = id_card
+
+    try:
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR,errmsg="认证数据保存异常")
+    return jsonify(errno=RET.OK,errmsg="ok")
