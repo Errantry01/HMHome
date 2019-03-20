@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-import datetime
-from flask import current_app, jsonify, request, g, session, render_template
-=======
 from datetime import datetime
-
 from flask import current_app, jsonify, request, g, session, json,make_response
->>>>>>> ljl
 from ihome import sr, db
-from ihome.models import Area, House, Facility, HouseImage, Order
+from ihome.models import Area, House, Facility, HouseImage, Order, User
 from ihome.modules.api import api_blu
 from ihome.utils import constants
 from ihome.utils.common import login_required
@@ -27,7 +21,40 @@ def get_user_house_list():
     2. 查询数据
     :return:
     """
-    pass
+    # 获取登录用户的id
+    user_id = g.user_id
+
+    # 查询数据
+    houses = []
+    try:
+        houses = House.query.filter(House.user_id == user_id).all()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询房屋数据异常")
+
+    # 获取房屋信息
+    for house in houses:
+        try:
+            house_area = Area.query.filter(house.area_id == Area.id).first()
+            house_image = HouseImage.query.filter(house.id == HouseImage.house_id).first()
+            house_user = User.query.filter(User.id == house.user_id).first()
+        except Exception as e:
+            current_app.logger.error(e)
+            return jsonify(errno=RET.DBERR, errmsg="查询用户数据异常")
+
+        # 组织返回数据,并返回
+        data = {'data': [{"address": house.address,
+                          "area_name": house_area.name,
+                          "ctime": house.create_time,
+                          "house_id": house.id,
+                          "img_url": house_image.url,
+                          "order_count": house.order_count,
+                          "price": house.price,
+                          "room_count": house.room_count,
+                          "title": house.title,
+                          "user_avatar": house_user.avatar_url}]
+                }
+        return jsonify(errno=0, errmsg='OK', data=data)
 
 
 # 获取地区信息
