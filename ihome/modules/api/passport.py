@@ -226,7 +226,7 @@ def logout():
     return jsonify(errno=RET.OK,errmsg="退出登录成功")
 
 
-# 登录页面发送短信验证码
+# 忘记密码转登录页面发送短信验证码
 @api_blu.route('/login_send_sms', methods=['POST'])
 def login_send_sms():
     # 1. 接收参数并判断是否有值
@@ -253,8 +253,10 @@ def login_send_sms():
 
         # 3.4.1 生成6位的随机短信
     real_sms_code = random.randint(0, 999999)
+
     # 6位，前面补零
     real_sms_code = "%06d" % real_sms_code
+    print(real_sms_code)
 
     # 4.发送短信验证码成功
     try:
@@ -262,15 +264,19 @@ def login_send_sms():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.THIRDERR, errmsg="云通信发送短信验证码异常")
+
     # 发送短信验证码失败：告知前端
     if result == -1:
         return jsonify(errno=RET.THIRDERR, errmsg="云通信发送短信验证码异常")
+
     # 6. redis中保存短信验证码内容
     sr.setex("SMS_CODE_%s" % mobile, constants.SMS_CODE_REDIS_EXPIRES, real_sms_code)
+
     # 7. 返回发送成功的响应
     return jsonify(errno=RET.OK, errmsg="发送短信验证码成功")
 
 
+# 短信验证码登录页面
 @api_blu.route('/login_sms', methods=['POST'])
 def login_sms():
     # 1. 获取参数和判断是否有值
@@ -346,7 +352,10 @@ def set_new_password():
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='数据库异常')
 
-    # 更新数据
+    # if user.password == new_password:
+    #     return jsonify(errno=RET.DATAEXIST, errmsg='密码不能与原本密码相同')
+
+    # 保存新密码
     user.password = new_password
 
     try:
