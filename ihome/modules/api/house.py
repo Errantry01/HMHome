@@ -42,6 +42,8 @@ def get_user_house_list():
         except Exception as e:
             current_app.logger.error(e)
             return jsonify(errno=RET.DBERR, errmsg="查询用户数据异常")
+
+        # 组织返回数据,并返回
         data = {'data': [{"address": house.address,
                           "area_name": house_area.name,
                           "ctime": house.create_time,
@@ -53,10 +55,7 @@ def get_user_house_list():
                           "title": house.title,
                           "user_avatar": house_user.avatar_url}]
                 }
-        return {'data': data,
-                "errno": "0",
-                "errmsg": "OK"
-                }
+        return jsonify(errno=0, errmsg='OK', data=data)
 
 
 # 获取地区信息
