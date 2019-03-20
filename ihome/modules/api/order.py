@@ -62,6 +62,8 @@ def add_order():
     order.house_id = house_id
     order.begin_date = start_date
     order.end_date = end_date
+    order.status = "WAIT_ACCEPT"
+    order.create_time = datetime.datetime.now()
     try:
         db.session.add(order)
         db.session.commit()
@@ -84,13 +86,42 @@ def get_orders():
     :return:
     """
     # 1获取参数
-
     comment = request.args.get('comment')
+
+    # 1.1如果登录用户是屋主,返回到订单管理页面
     if comment == 'landlord':
         return current_app.send_static_file("ihome/static/html/lorders.html")
-    elif comment == 'custom':
-        pass
 
+    # 1.2如果登录用户是租客
+    elif comment == 'custom':
+        user_id = g.user_id
+        orders = []
+
+        # 查询租客的订单列表
+        try:
+            orders = Order.query.filter(Order.user_id==user_id).order_by(Order.create_time.desc()).all()
+        except Exception as e:
+            current_app.logger.error(e)
+            return jsonify(errno=RET.DBERR, errmsg="查询用户数据异常")
+
+        # 组织用户订单数据并返回
+        for order in orders:
+            data = {'orders':[{"amount": order.amount,
+                               "comment": order.comment,
+                               "ctime": order.create_time,
+                               "days": order.days,
+                               "end_date": order.end_date,
+                               "img_url": '',
+                               "order_id": order.id,
+                               "start_date": order.begin_date,
+                               "status": order.status,
+                               "title": '我的订单'
+                               }]
+                    }
+            return {'data':data,
+                    "errno": "0",
+                    "errmsg": "OK"
+                    }
 
 
 # 接受/拒绝订单
