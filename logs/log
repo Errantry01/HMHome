@@ -7425,3 +7425,8 @@ INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_int
 INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 14:35:08] "GET /login.html HTTP/1.1" 304 -
 INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 14:35:08] "GET /static/css/ihome/login.css HTTP/1.1" 304 -
 INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 14:35:08] "GET /static/js/ihome/login.js HTTP/1.1" 304 -
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/tkzc/HMHome/ihome/utils/image_storage.py', reloading
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
+WARNING /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 983-773-594
+INFO /home/python/.virtualenvs/flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 15:10:26] "GET /api/v1.0/areas HTTP/1.1" 500 -
