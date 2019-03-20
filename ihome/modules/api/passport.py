@@ -100,7 +100,6 @@ def register():
     mobile = Post_register.get('mobile')
     ses_code = Post_register.get('phonecode')
     password = Post_register.get('password')
-    print(mobile, ses_code,password)
     if not all([mobile,ses_code,password]):
         current_app.logger.error("参数不足")
         return jsonify(errno=RET.PARAMERR,errsmg="参数不足")
