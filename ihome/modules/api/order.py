@@ -86,47 +86,30 @@ def get_orders():
     :return:
     """
     # 1获取参数
-    comment = request.args.get('comment')
+    role = request.args.get('role', '')
+    user_id = g.user_id
+    try:
+        # 1.1登录用户是屋主
+        if role == 'landlord':
+            houses = House.query.filter(House.user_id == user_id).all()
+            houses_ids = [house.id for house in houses]
+            # 在Order表中查询预定了自己房子的订单,并按照创建订单的时间的倒序排序，也就是在此页面显示最新的订单信息
+            orders = Order.query.filter(Order.house_id.in_(houses_ids)).order_by(Order.create_time.desc()).all()
 
-    # 1.1如果登录用户是屋主,返回到订单管理页面
-    if comment == 'landlord':
-        return current_app.send_static_file("ihome/static/html/lorders.html")
+        # 1.2登录用户是租客
+        else:
+            # 查询租客的订单列表
+            orders = Order.query.filter(Order.user_id == user_id).order_by(Order.create_time.desc()).all()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询用户订单数据异常")
 
-    # 1.2如果登录用户是租客
-    elif comment == 'custom':
-        user_id = g.user_id
-        orders = []
-
-        # 查询租客的订单列表
-        try:
-            orders = Order.query.filter(Order.user_id==user_id).order_by(Order.create_time.desc()).all()
-        except Exception as e:
-            current_app.logger.error(e)
-            return jsonify(errno=RET.DBERR, errmsg="查询用户数据异常")
-
-        # 组织用户订单数据并返回
+    # 组织用户订单数据并返回
+    orders_dict_list = []
+    if orders:
         for order in orders:
-            try:
-                order_house = House.query.filter(House.id == order.house_id).first()
-            except Exception as e:
-                current_app.logger.error(e)
-                return jsonify(errno=RET.DBERR, errmsg="查询用户数据异常")
-            data = {'orders':[{"amount": order.amount,
-                               "comment": order.comment,
-                               "ctime": order.create_time,
-                               "days": order.days,
-                               "end_date": order.end_date,
-                               "img_url": '#',
-                               "order_id": order.id,
-                               "start_date": order.begin_date,
-                               "status": order.status,
-                               "title": order_house.title
-                               }]
-                    }
-            return {'data': data,
-                    "errno": "0",
-                    "errmsg": "OK"
-                    }
+            orders_dict_list.append(order.to_dict())
+    return jsonify(errno=0, errmsg='OK', data={"orders":orders_dict_list})
 
 
 # 接受/拒绝订单
