@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INFO /Users/zhangzz/.virtualenvs/env17/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 INFO /Users/zhangzz/.virtualenvs/env17/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
 WARNING /Users/zhangzz/.virtualenvs/env17/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
@@ -6804,3 +6805,5 @@ INFO /home/python/.vritualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/
 INFO /home/python/.vritualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Restarting with stat
 WARNING /home/python/.vritualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
 INFO /home/python/.vritualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 683-098-825
+=======
+>>>>>>> ef9a00d23f32e2fe2ea104b4ebdf90c84e259228

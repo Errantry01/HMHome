@@ -1,17 +1,12 @@
-
-migrations/README
-migrations/alembic.ini
-migrations/env.py
-migrations/script.py.mako
-
 .idea
 logs/log*
-migrations
+migrations/
 .idea/workspace.xml
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+logs/log*
 
 # C extensions
 *.so
@@ -112,3 +107,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+*.py[cod]
+logs/log*
+migrations
