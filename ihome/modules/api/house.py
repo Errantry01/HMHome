@@ -27,22 +27,7 @@ def get_user_house_list():
 # 获取地区信息
 @api_blu.route("/areas")
 def get_areas():
-    """
-    1. 查询出所有的城区
-    2. 返回
-    :return:
-    """
-    try:
-        area_li = Area.query.all()
-    except Exception as e:
-        current_app.logger.error(e)
-        return jsonify(errno=RET.DBERR, errmsg="获取城区对象异常")
-
-    areas_dicts = []
-    for area in area_li:
-        areas_dicts.append(area.to_dict())
-
-    return jsonify(errno=RET.OK, errmsg="OK", data=areas_dicts)
+    pass
 
 
 # 上传房屋图片
