@@ -29,15 +29,11 @@ def get_user_info():
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg='查询用户信息异常')
 
-    user_list = []
+    name = user.name
+    mobile = user.mobile
+    avatar_url = user.avatar_url
 
-    user_list = user.to_dict() if user else None
-
-    data = {
-        "user_info": user_list
-    }
-
-    return jsonify(errno=RET.OK, errmsg='获取用户信息成功', data=data)
+    return jsonify(errno=RET.OK, errmsg='获取用户信息成功', data={"name": name, "mobile":mobile, "avatar_url": avatar_url})
 
 
 # 修改用户名
@@ -137,12 +133,10 @@ def set_user_avatar():
     # 完整头像地址返回
     full_url = QINIU_DOMIN_PREFIX + avatar_name
 
-    data = {
-        "avatar_url": full_url
-    }
+    avatar_url = full_url
 
     # 4.返回上传的结果 < avatar_url >
-    return jsonify(errno=RET.OK, errmsg='上传个人头像成功', data=data)
+    return jsonify(errno=RET.OK, errmsg='上传个人头像成功', data={"avatar_url": avatar_url})
 
 
 # 获取用户实名信息
@@ -169,23 +163,26 @@ def get_user_auth():
         return jsonify(errno=RET.DBERR, errmsg='查询用户信息异常')
 
     # 3.获取当前用户的认证信息
-    real_name = request.args.get('real_name')
-    id_card = request.args.get('id_card')
+    # real_name = request.args.get('real_name')
+    # id_card = request.args.get('id_card')
 
-    # 3.1 非空判断
-    if not all([real_name, id_card]):
-        return jsonify(errno=RET.PARAMERR, errmsg='参数不足')
+    real_name = user.real_name
+    id_card = user.id_card
 
-    # 3.2 校对真实姓名
-    if real_name != user.real_name:
-        return jsonify(errno=RET.DATAERR, errmsg='用户真实姓名错误')
-
-    # 3.3 校对身份证号码
-    if id_card != user.id_card:
-        return jsonify(errno=RET.DATAERR, errmsg='身份证号码错误')
+    # # 3.1 非空判断
+    # if not all([real_name, id_card]):
+    #     return jsonify(errno=RET.PARAMERR, errmsg='参数不足')
+    #
+    # # 3.2 校对真实姓名
+    # if real_name != user.real_name:
+    #     return jsonify(errno=RET.DATAERR, errmsg='用户真实姓名错误')
+    #
+    # # 3.3 校对身份证号码
+    # if id_card != user.id_card:
+    #     return jsonify(errno=RET.DATAERR, errmsg='身份证号码错误')
 
     # 4.返回信息
-    return jsonify(errno=RET.OK, errmsg='用户实名认证成功')
+    return jsonify(errno=RET.OK, errmsg='用户实名认证成功', data={"real_name": real_name, "id_card": id_card})
 
 
 
@@ -209,8 +206,16 @@ def set_user_auth():
         return jsonify(errno=RET.USERERR, errmsg="用户未登录")
     if not all([real_name, id_card]):
         return jsonify(errno=RET.PARAMERR, errmsg="参数不足")
-    User.real_name = real_name
-    User.id_card = id_card
+
+
+    try:
+        user = User.query.get(user_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg='查询用户信息异常')
+
+    user.real_name = real_name
+    user.id_card = id_card
 
     try:
         db.session.commit()
