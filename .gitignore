@@ -7,10 +7,7 @@ migrations\
 __pycache__/
 *.py[cod]
 *$py.class
-logs/log*
 migrations/
-
-
 # C extensions
 *.so
 
