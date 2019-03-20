@@ -3,10 +3,9 @@ from flask import session
 from flask_script import Manager
 from flask_migrate import MigrateCommand
 from ihome import create_app
-from pymysql import install_as_MySQLdb
 
-
-install_as_MySQLdb()
+import pymysql
+pymysql.install_as_MySQLdb()
 
 # 创建应用
 app = create_app("dev")

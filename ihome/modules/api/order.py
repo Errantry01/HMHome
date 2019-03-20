@@ -5,7 +5,7 @@ from ihome.models import House, Order
 from ihome.utils.common import login_required
 from ihome.utils.response_code import RET
 from . import api_blu
-from flask import request, g, jsonify, current_app
+from flask import request, g, jsonify, current_app, session
 
 
 # 预订房间
@@ -23,7 +23,57 @@ def add_order():
     7. 返回下单结果
     :return:
     """
-    pass
+    param_dict = request.json
+    start_date = param_dict.get('start_date')
+    end_date = param_dict.get('end_date')
+    house_id = param_dict.get('house_id')
+    user_id = g.user_id
+
+    # 校验参数
+    if not all([start_date, end_date, house_id]):
+        return jsonify(errno=RET.PARAMERR, errmsg='参数不足')
+
+    # 查询房屋是否存在
+    try:
+        house = House.query.filter(House.id == house_id).first()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询房屋数据异常")
+    if not house:
+        return jsonify(errno=RET.NODATA, errmsg='房屋不存在')
+
+    # 判断当前房屋的房主是否是登录用户
+    if user_id == house.user_id:
+        return jsonify(errno=RET.DATAERR, errmsg='用户为屋主,不能预定')
+
+    # 查询当前预订时间是否存在冲突
+    try:
+        order = Order.query.filter(Order.house_id == house_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询订单数据异常")
+    if order:
+        if not (start_date > order.end_date or end_date < order.begin_date):
+            return jsonify(errno=RET.DATAERR, errmsg='该时间段已有订单')
+
+    # 生成订单模型，进行下单
+    order = Order()
+    order.user_id = user_id
+    order.house_id = house_id
+    order.begin_date = start_date
+    order.end_date = end_date
+    order.status = "WAIT_ACCEPT"
+    order.create_time = datetime.datetime.now()
+    try:
+        db.session.add(order)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="保存订单数据异常")
+    # 返回数据
+    return {"data": {"order_id": order.id},
+            "errno": "0",
+            "errmsg": "OK"}
 
 
 # 获取我的订单
@@ -35,7 +85,31 @@ def get_orders():
     2. 返回数据
     :return:
     """
-    pass
+    # 1获取参数
+    role = request.args.get('role', '')
+    user_id = g.user_id
+    try:
+        # 1.1登录用户是屋主
+        if role == 'landlord':
+            houses = House.query.filter(House.user_id == user_id).all()
+            houses_ids = [house.id for house in houses]
+            # 在Order表中查询预定了自己房子的订单,并按照创建订单的时间的倒序排序，也就是在此页面显示最新的订单信息
+            orders = Order.query.filter(Order.house_id.in_(houses_ids)).order_by(Order.create_time.desc()).all()
+
+        # 1.2登录用户是租客
+        else:
+            # 查询租客的订单列表
+            orders = Order.query.filter(Order.user_id == user_id).order_by(Order.create_time.desc()).all()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询用户订单数据异常")
+
+    # 组织用户订单数据并返回
+    orders_dict_list = []
+    if orders:
+        for order in orders:
+            orders_dict_list.append(order.to_dict())
+    return jsonify(errno=0, errmsg='OK', data={"orders":orders_dict_list})
 
 
 # 接受/拒绝订单

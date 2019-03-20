@@ -26,6 +26,7 @@ def storage_image(data):
 
     else:
         raise BaseException(info)
+    print(ret.get("key"))
 
 
 if __name__ == '__main__':

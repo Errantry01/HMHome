@@ -1,8 +1,10 @@
 from __future__ import with_statement
+
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 from logging.config import fileConfig
 import logging
+
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -41,7 +43,9 @@ def run_migrations_offline():
 
     """
     url = config.get_main_option("sqlalchemy.url")
+
     context.configure(url=url)
+
 
     with context.begin_transaction():
         context.run_migrations()
@@ -64,6 +68,25 @@ def run_migrations_online():
             if script.upgrade_ops.is_empty():
                 directives[:] = []
                 logger.info('No changes in schema detected.')
+
+
+    connectable = engine_from_config(
+        config.get_section(config.config_ini_section),
+        prefix='sqlalchemy.',
+        poolclass=pool.NullPool,
+    )
+
+    with connectable.connect() as connection:
+        context.configure(
+            connection=connection,
+            target_metadata=target_metadata,
+            process_revision_directives=process_revision_directives,
+            **current_app.extensions['migrate'].configure_args
+        )
+
+        with context.begin_transaction():
+            context.run_migrations()
+
 
     engine = engine_from_config(config.get_section(config.config_ini_section),
                                 prefix='sqlalchemy.',
