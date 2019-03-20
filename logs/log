@@ -7299,3 +7299,6 @@ INFO /home/python/.vritualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/
 INFO /home/python/.vritualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88 127.0.0.1 - - [20/Mar/2019 15:48:07] "GET /static/plugins/swiper/js/maps/swiper.jquery.min.js.map HTTP/1.1" 404 -
 WARNING /home/python/.vritualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
 INFO /home/python/.vritualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 683-098-825
+INFO /home/python/.vritualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Detected change in '/home/python/Desktop/wangzhen/HMHome/ihome/modules/api/profile.py', reloading
+WARNING /home/python/.vritualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger is active!
+INFO /home/python/.vritualenvs/py3_flask24/lib/python3.6/site-packages/werkzeug/_internal.py:88  * Debugger PIN: 683-098-825
