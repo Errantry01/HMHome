@@ -8,6 +8,7 @@ from . import api_blu
 from flask import request, g, jsonify, current_app, session
 
 
+
 # 预订房间
 @api_blu.route('/orders', methods=['POST'])
 @login_required
@@ -115,7 +116,7 @@ def get_orders():
 # 接受/拒绝订单
 @api_blu.route('/orders', methods=["PUT"])
 @login_required
-def change_order_status():
+def change_order_status(order_id):
     """
     1. 接受参数：order_id
     2. 通过order_id找到指定的订单，(条件：status="待接单")
@@ -124,13 +125,64 @@ def change_order_status():
     5. 返回
     :return:
     """
-    pass
+    # 1.接受参数：order_id
+    param_dict = request.get_json()
+    action = param_dict.get("action")
+    reason = param_dict.get("reason")
+    user_id = g.user_id
+
+
+    if not all([order_id, action]):
+        return jsonify(errno=RET.PARAMERR, errmsg="参数不足")
+    if action not in ["accept", "reject"]:
+        return jsonify(errno=RET.PARAMERR, errmsg="参数不足")
+
+    # 2.通过order_id找到指定的订单，(条件：status="待接单")
+    try:
+        order = Order.query.filter(Order.id == order_id, Order.status == "WAIT_ACCEPT").first()
+        house_id = order.house_id
+
+        # 根据订单房屋id查询房屋对象
+        house = House.query.get(house_id)
+
+
+
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询订单对象异常")
+
+    # 如果order对象不存在或者订单中的房屋id不等于用户id 则说明房东在修改不属于自己房屋订单
+    if not order or house.user_id != user_id:
+        return jsonify(errno=RET.REQERR, errmsg="操作无效")
+
+    # 3.修改订单状态
+    if action == "accept":
+        order.status = "WAIT_COMMENT"
+    else:
+        if not reason:
+            return jsonify(errno=RET.PARAMERR, errmsg="请输入拒绝原因")
+
+        order.status = "REJECTED"
+        order.comment = reason
+    # 4.保存到数据库
+    try:
+        db.session.add(order)
+        db.session.commit()
+
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg="保存订单状态异常")
+    # 5.返回
+    return jsonify(errno=RET.OK, errmsg="OK")
+
+
 
 
 # 评论订单
 @api_blu.route('/orders/comment', methods=["PUT"])
 @login_required
-def order_comment():
+def order_comment(order_id):
     """
     订单评价
     1. 获取参数
@@ -138,4 +190,62 @@ def order_comment():
     3. 修改模型
     :return:
     """
-    pass
+
+
+    # 1.获取参数
+    param_dict = request.get_json()
+    comment = param_dict.get("comment")
+    user_id = g.user_id
+
+
+    # 2.校验参数
+    if not comment:
+        return jsonify(errno=RET.PARAMERR, errmsg="参数不足")
+
+    # 查询订单,确保用户只能评价自己的订单并且订单处于待评价的状态
+    try:
+        order = Order.query.filter(Order.id == order_id, Order.user_id == user_id, Order.status == "WAIT_COMMENT").first()
+        house_id = order.house_id
+        # 根据订单房屋id查询房屋对象
+        house = House.query.get(house_id)
+
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询订单异常")
+
+    if not order:
+        return jsonify(errno=RET.NODATA, errmsg="订单不存在")
+
+    # 3.修改模型
+
+    # 保存评价信息
+    order.comment = comment
+    # 将订单的状态设置为已完成
+    order.status = "COMPLETE"
+    # 将房屋完成订单数加1
+    house.order_count += 1
+
+
+    # 4.保存到数据库
+    try:
+        db.session.add(order)
+        db.session.add(house)
+        db.session.commit()
+
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+        return jsonify(errno=RET.DBERR, errmsg="保存评价异常")
+
+    # 为了在房屋详情中显示最新的评价信息，所以需要删除redis中该订单对应的房屋的信息
+    try:
+        sr.delete("house_info_%s" % order.house_id)
+
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="删除redis中该订单对应的房屋的信息异常")
+
+    # 5.返回
+    return jsonify(errno=RET.OK, errmsg="OK")
+
+
