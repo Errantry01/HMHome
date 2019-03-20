@@ -1,3 +1,9 @@
+
+migrations/README
+migrations/alembic.ini
+migrations/env.py
+migrations/script.py.mako
+
 .idea
 logs/log*
 migrations
