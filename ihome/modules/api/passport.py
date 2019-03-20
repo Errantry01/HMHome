@@ -21,7 +21,7 @@ def get_image_code():
         return jsonify(errno=RET.PARAMERR, errmsg="image code err")
     # 2. 生成图片验证码
     image_name, sea_image_name, image_data = captcha.generate_captcha()
-    # 3. 保存编号和其对应的图片验证码内容到redis#使用code_id作为key将验证码真实值存储到redis中，并且设置有效时长
+    # 3. 保存编号和其对应的图片验证码内容到redis
     sr.setex("Iamge_Code_%s" % code_id, constants.IMAGE_CODE_REDIS_EXPIRES, sea_image_name)
     # 4. 返回验证码图片
 
@@ -73,19 +73,17 @@ def send_sms():
 
 
     if user:
-        # 当前手机号码已经注册
         return jsonify(errno=RET.DATAEXIST, errmsg="手机号码已经注册")
-        # 3.4.1 生成6位的随机短信
     real_sms_code = random.randint(0, 999999)
-    # 6位，前面补零
+    # 6位的密码
     real_sms_code = "%06d" % real_sms_code
-    # 4.发送短信验证码成功
+    # 发送短信验证码
     try:
         result = CCP().send_template_sms(mobile, {real_sms_code, 5}, 1)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.THIRDERR, errmsg="云通信发送短信验证码异常")
-    # 发送短信验证码失败：告知前端
+    # 发送短信验证码失败
     if result == -1:
         return jsonify(errno=RET.THIRDERR, errmsg="云通信发送短信验证码异常")
     # 6. redis中保存短信验证码内容
@@ -97,17 +95,44 @@ def send_sms():
 # 用户注册
 @api_blu.route("/user", methods=["POST"])
 def register():
-    """
-    1. 获取参数和判断是否有值
-    2. 从redis中获取指定手机号对应的短信验证码的
-    3. 校验验证码
-    4. 初始化 user 模型，并设置数据并添加到数据库
-    5. 保存当前用户的状态
-    6. 返回注册的结果
-    :return:
-    """
-    pass
+    # 1. 获取参数和判断是否有值
+    Post_register = request.json
+    mobile = Post_register.get('mobile')
+    ses_code = Post_register.get('phonecode')
+    password = Post_register.get('password')
+    print(mobile, ses_code,password)
+    if not all([mobile,ses_code,password]):
+        current_app.logger.error("参数不足")
+        return jsonify(errno=RET.PARAMERR,errsmg="参数不足")
+    # 判断手机号码
+    if not re.match(r"1[2345678][0-9]{9}", mobile):
+        return jsonify(errno=RET.PARAMERR, errmsg="手机号码格式错误")
+    # 2. 从redis中获取指定手机号对应的短信验证码的
+    try:
+        real_sms_code = sr.get("SMS_CODE_%s" % mobile)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="查询redis中短信验证码异常")
 
+    # 3. 校验验证码
+    if ses_code != real_sms_code:
+        #  3.3 不相等：短信验证码填写错误
+        return jsonify(errno=RET.DATAERR, errmsg="短信验证码填写错误")
+
+    # 4. 初始化 user 模型，并设置数据并添加到数据库
+    user = User()
+    user.name = mobile
+    user.mobile = mobile
+    user.password = password
+    # 5. 保存当前用户的状态
+    try:
+        db.session.add(user)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR,errmsg="保存对象异常")
+    # 6. 返回注册的结果
+    return jsonify(errno=RET.OK, errmsg="注册成功")
 
 # 用户登录
 @api_blu.route("/session", methods=["POST"])
