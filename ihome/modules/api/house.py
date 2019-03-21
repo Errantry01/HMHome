@@ -27,9 +27,9 @@ def get_user_house_list():
     # 查询数据
     houses_list = []
     try:
-        # houses = House.query.filter(House.user_id == user_id).all()
-        user = User.query.get(user_id)
-        houses = user.houses
+        houses = House.query.filter(House.user_id == user_id).all()
+        # user = User.query.get(user_id)
+        # houses = user.houses
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="查询房屋数据异常")
@@ -38,29 +38,8 @@ def get_user_house_list():
     for house in houses:
         houses_list.append(house.to_basic_dict())
 
-    # 获取房屋信息
-    # for house in houses:
-    #     try:
-    #         house_area = Area.query.filter(house.area_id == Area.id).first()
-    #         house_image = HouseImage.query.filter(house.id == HouseImage.house_id).first()
-    #         house_user = User.query.filter(User.id == house.user_id).first()
-    #     except Exception as e:
-    #         current_app.logger.error(e)
-    #         return jsonify(errno=RET.DBERR, errmsg="查询用户数据异常")
-        #
-        # # 组织返回数据,并返回
-        # data = {'data': [{"address": house.address,
-        #                   "area_name": house_area.name,
-        #                   "ctime": house.create_time,
-        #                   "house_id": house.id,
-        #                   "index_image_url": house_image.url,
-        #                   "order_count": house.order_count,
-        #                   "price": house.price,
-        #                   "room_count": house.room_count,
-        #                   "title": house.title,
-        #                   "user_avatar": house_user.avatar_url}]
-        #         }
-        return jsonify(errno=0, errmsg='OK', data={"houses":houses_list})
+
+    return jsonify(errno=0, errmsg='OK', data=houses_list)
 
 
 # 获取地区信息
@@ -98,8 +77,8 @@ def upload_house_image(house_id):
     4. 进行返回
     :return:
     """
-    house_id = request.form.get("house_id")
-    images = request.files.get("images")
+    house_id = house_id
+    images = request.files.get("house_image")
 
     if not all([house_id, images]):
         return jsonify(errno=RET.PARAMERR, errmsg="参数不足")
@@ -133,7 +112,8 @@ def upload_house_image(house_id):
         return jsonify(errno=RET.DBERR, errmsg="保存图片异常")
 
     image_url = constants.QINIU_DOMIN_PREFIX + file_name
-    return jsonify(errno=RET.OK, errmsg="OK", data={"image_url": image_url})
+    print(image_url)
+    return jsonify(errno=RET.OK, errmsg="OK", data={"url": image_url})
 
 
 # 发布房源
@@ -162,7 +142,7 @@ def save_new_house():
     }
     :return:
     """
-    user_id = g.user.id
+    user_id = g.user_id
     house_data = request.get_json()
 
     title = house_data.get("title")

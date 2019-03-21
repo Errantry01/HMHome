@@ -35,7 +35,6 @@ def get_image_code():
     return response
 
 
-
 # 获取短信验证码
 @api_blu.route('/smscode', methods=["POST"])
 def send_sms():
@@ -66,7 +65,6 @@ def send_sms():
     if image_code.lower() != real_image_code.lower():
         return jsonify(errno=RET.PARAMERR, errmsg="图片错误")
 
-
     # 5. 生成发送短信的内容并发送短信
         # TODO: 判断手机号码是否已经注册 【提高用户体验】
     try:
@@ -74,7 +72,6 @@ def send_sms():
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="查询用户数据异常")
-
 
     if user:
         return jsonify(errno=RET.DATAEXIST, errmsg="手机号码已经注册")
@@ -137,6 +134,7 @@ def register():
     # 6. 返回注册的结果
     return jsonify(errno=RET.OK, errmsg="注册成功")
 
+
 # 用户登录
 @api_blu.route("/session", methods=["POST"])
 def login():
@@ -183,7 +181,6 @@ def login():
     return jsonify(errno=RET.OK ,errmsg="ok")
 
 
-
 # 获取登录状态
 @api_blu.route('/session')
 def check_login():
@@ -191,18 +188,6 @@ def check_login():
     检测用户是否登录，如果登录，则返回用户的名和用户id
     :return:
     """
-    # user_id = session.get("user_id")
-    # # print(user_id)
-    # user = None
-    # user_dict = []
-    # if user_id:
-    #     try:
-    #         user = User.query.get(user_id)
-    #     except Exception as e:
-    #         return jsonify(errno=RET.USERERR,errmsg="查询用户失败")
-    #
-    #     return jsonify(errno=RET.OK, errmsg="登录成功",data ={"name": user_id})
-
     name = session.get("name")
     user_id = session.get("user_id")
     # name不为空，则返回ok，并将name以字典形式传给前端，为空则返回对应错误信息
@@ -224,7 +209,6 @@ def logout():
     session.pop("name","")
 
     return jsonify(errno=RET.OK,errmsg="退出登录成功")
-
 
 
 # 忘记密码转登录页面发送短信验证码
@@ -289,7 +273,11 @@ def login_sms():
         # 参数不全
         return jsonify(errno=RET.PARAMERR, errmsg="参数不全")
 
-    # 2. 从数据库查询出指定的用户
+    # 2. 校验手机号是正确
+    if not re.match(r"1[2345678][0-9]{9}", mobile):
+        return jsonify(errno=RET.PARAMERR, errmsg="手机号码格式错误")
+
+    # 3. 从数据库查询出指定的用户
     try:
         user = User.query.filter(User.mobile == mobile).first()
     except Exception as e:
@@ -305,19 +293,18 @@ def login_sms():
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="查询redis中短信验证码异常")
 
-    # 3. 校验验证码
+    # 4. 校验验证码
     if phonecode != real_sms_code:
         #  3.3 不相等：短信验证码填写错误
         return jsonify(errno=RET.DATAERR, errmsg="短信验证码填写错误")
 
-    # 4. 保存用户登录状态
+    # 5. 保存用户登录状态
 
     session["user_id"] = user.id
     session["mobile"] = user.mobile
 
     # 记录用户最后一次登录时间
     user.last_login = datetime.now()
-
 
     try:
         db.session.commit()
@@ -328,7 +315,6 @@ def login_sms():
 
     # 5. 登录成功
     return jsonify(errno=RET.OK, errmsg="OK")
-
 
 
 # 设置新密码

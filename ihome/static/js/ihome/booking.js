@@ -96,7 +96,7 @@ $(document).ready(function(){
                     location.href = "/orders.html"
                 }else if (resp.errno == "4101") {
                     location.href = "/login.html"
-                }else {
+                }else {6
                     alert(resp.errmsg)
                 }
             }

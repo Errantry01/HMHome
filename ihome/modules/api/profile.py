@@ -32,8 +32,9 @@ def get_user_info():
     name = user.name
     mobile = user.mobile
     avatar_url = user.avatar_url
+    full_url = QINIU_DOMIN_PREFIX + avatar_url
 
-    return jsonify(errno=RET.OK, errmsg='获取用户信息成功', data={"name": name, "mobile":mobile, "avatar_url": avatar_url})
+    return jsonify(errno=RET.OK, errmsg='获取用户信息成功', data={"name": name, "mobile":mobile, "avatar_url": full_url})
 
 
 # 修改用户名
@@ -133,10 +134,10 @@ def set_user_avatar():
     # 完整头像地址返回
     full_url = QINIU_DOMIN_PREFIX + avatar_name
 
-    avatar_url = full_url
+    # avatar_url = full_url
 
     # 4.返回上传的结果 < avatar_url >
-    return jsonify(errno=RET.OK, errmsg='上传个人头像成功', data={"avatar_url": avatar_url})
+    return jsonify(errno=RET.OK, errmsg='上传个人头像成功', data={"avatar_url": full_url})
 
 
 # 获取用户实名信息

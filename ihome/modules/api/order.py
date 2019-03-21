@@ -119,7 +119,7 @@ def get_orders():
 # 接受/拒绝订单
 @api_blu.route('/orders', methods=["PUT"])
 @login_required
-def change_order_status(order_id):
+def change_order_status():
     """
     1. 接受参数：order_id
     2. 通过order_id找到指定的订单，(条件：status="待接单")
@@ -129,11 +129,13 @@ def change_order_status(order_id):
     :return:
     """
     # 1.接受参数：order_id
+    # order_id = order_id
     param_dict = request.get_json()
     action = param_dict.get("action")
     reason = param_dict.get("reason")
-    user_id = g.user_id
+    order_id = param_dict.get("order_id")
 
+    user_id = g.user_id
 
     if not all([order_id, action]):
         return jsonify(errno=RET.PARAMERR, errmsg="参数不足")
@@ -184,7 +186,7 @@ def change_order_status(order_id):
 # 评论订单
 @api_blu.route('/orders/comment', methods=["PUT"])
 @login_required
-def order_comment(order_id):
+def order_comment():
     """
     订单评价
     1. 获取参数
@@ -193,10 +195,10 @@ def order_comment(order_id):
     :return:
     """
 
-
     # 1.获取参数
     param_dict = request.get_json()
     comment = param_dict.get("comment")
+    order_id = param_dict.get("order_id")
     user_id = g.user_id
 
 
